@@ -30,14 +30,7 @@ describe('KpiCard', () => {
   });
 
   it('renders displayOverride when provided', () => {
-    render(
-      <KpiCard
-        title="Invested"
-        value={500}
-        variant="currency"
-        displayOverride="••••••"
-      />,
-    );
+    render(<KpiCard title="Invested" value={500} variant="currency" displayOverride="••••••" />);
     expect(screen.getByText('••••••')).toBeInTheDocument();
     expect(screen.queryByText('$500.00')).not.toBeInTheDocument();
   });

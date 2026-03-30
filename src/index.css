@@ -113,15 +113,11 @@
 }
 
 .card::before {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   border-radius: 16px;
-  background: radial-gradient(
-    circle at top left,
-    rgba(100, 200, 180, 0.05),
-    transparent 60%
-  );
+  background: radial-gradient(circle at top left, rgba(100, 200, 180, 0.05), transparent 60%);
   pointer-events: none;
 }
 .winbit-card {
@@ -146,15 +142,11 @@
 }
 
 .winbit-card::before {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   border-radius: 16px;
-  background: radial-gradient(
-    circle at top left,
-    rgba(141, 200, 191, 0.06),
-    transparent 60%
-  );
+  background: radial-gradient(circle at top left, rgba(141, 200, 191, 0.06), transparent 60%);
   pointer-events: none;
 }
 
@@ -191,7 +183,7 @@
 }
 
 .winbit-card--highlight::before {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   border-radius: 16px;
@@ -234,15 +226,11 @@
 }
 
 .winbit-card--compact::before {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   border-radius: 16px;
-  background: radial-gradient(
-    circle at top left,
-    rgba(141, 200, 191, 0.06),
-    transparent 60%
-  );
+  background: radial-gradient(circle at top left, rgba(141, 200, 191, 0.06), transparent 60%);
   pointer-events: none;
 }
 

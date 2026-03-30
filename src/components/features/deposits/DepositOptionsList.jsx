@@ -31,9 +31,7 @@ export const DepositOptionsList = ({ options }) => {
     <div className="space-y-8">
       {sortedCategories.map((category) => (
         <div key={category}>
-          <h3
-            className="text-lg font-semibold tracking-wide text-text-primary border-b border-[rgba(101,167,165,0.15)] pb-2 mb-3"
-          >
+          <h3 className="text-lg font-semibold tracking-wide text-text-primary border-b border-[rgba(101,167,165,0.15)] pb-2 mb-3">
             {t(`deposits.categories.${category}`)}
           </h3>
           <div className="grid gap-5 md:grid-cols-2">

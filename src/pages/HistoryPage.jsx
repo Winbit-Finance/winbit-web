@@ -479,9 +479,7 @@ export const HistoryPage = () => {
                     </div>
 
                     <div className="shrink-0 text-right">
-                      <div
-                        className={`text-base font-bold ${amountClass(row)}`}
-                      >
+                      <div className={`text-base font-bold ${amountClass(row)}`}>
                         {formatCurrency(displayAmount(row))}
                       </div>
                     </div>
@@ -610,7 +608,9 @@ export const HistoryPage = () => {
                         </div>
                       </td>
                       <td className="px-4 py-3 text-sm text-text-primary text-right whitespace-nowrap">
-                        <span className={amountClass(row)}>{formatCurrency(displayAmount(row))}</span>
+                        <span className={amountClass(row)}>
+                          {formatCurrency(displayAmount(row))}
+                        </span>
                       </td>
                       <td className="px-4 py-3 text-sm text-text-primary text-right whitespace-nowrap">
                         {row.previousBalance !== null ? formatCurrency(row.previousBalance) : '-'}

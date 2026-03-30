@@ -486,7 +486,9 @@ export const DashboardPage = () => {
         <h1 className="text-3xl font-bold text-text-primary">
           {t('dashboard.welcomeBack', { name: formatName(data.name) })}
         </h1>
-        <p className="section-subtitle mt-1 pb-2 border-b border-[rgba(101,167,165,0.15)]">{t('dashboard.subtitle')}</p>
+        <p className="section-subtitle mt-1 pb-2 border-b border-[rgba(101,167,165,0.15)]">
+          {t('dashboard.subtitle')}
+        </p>
       </div>
 
       {/* KPI summary */}
