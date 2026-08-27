@@ -77,7 +77,9 @@ const translations = {
     contactoTitle: 'Contacto',
     contactoDesc:
       'Mantenemos una comunicación directa y profesional con cada inversor. Estamos disponibles para consultas, aclaraciones y gestión de solicitudes.',
+    contactoEmailLabel: 'Correo electrónico',
     contactoEmail: 'winbit.cfds@gmail.com',
+    contactoWhatsAppLabel: 'WhatsApp de atención directa',
     contactoWhatsApp: '+54 9 11 4178-3126',
 
     // Footer
@@ -164,7 +166,9 @@ const translations = {
     contactoTitle: 'Contact',
     contactoDesc:
       'We maintain direct and professional communication with each investor. We are available for inquiries, clarifications, and request management.',
+    contactoEmailLabel: 'Email',
     contactoEmail: 'winbit.cfds@gmail.com',
+    contactoWhatsAppLabel: 'Direct support WhatsApp',
     contactoWhatsApp: '+54 9 11 4178-3126',
 
     // Footer
