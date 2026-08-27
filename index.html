@@ -259,12 +259,49 @@
       <!-- Section 3: Inversión -->
       <section class="section section-cream" id="inversion">
         <div class="container">
-          <header class="section-header header-right">
-            <h2 class="section-title" data-i18n="inversionTitle">INVERSIÓN</h2>
-            <p class="section-subtitle section-subtitle-italic">
-              Estructura diseñada para permitir flexibilidad y acceso permanente al capital.
-            </p>
-          </header>
+          <div class="inversion-intro">
+            <!-- Mockup ilustrativo de la app, con cuenta demo (sin datos reales de clientes) -->
+            <div class="app-mockup" aria-hidden="true">
+              <div class="app-mockup-top">
+                <span class="app-mockup-label">PORTAFOLIO · CUENTA DEMO</span>
+                <span class="app-mockup-dot"></span>
+              </div>
+              <span class="app-mockup-balance">USD 12.480</span>
+              <span class="app-mockup-delta">+2,1&nbsp;% este mes</span>
+              <svg
+                class="app-mockup-chart"
+                viewBox="0 0 220 56"
+                preserveAspectRatio="none"
+                fill="none"
+              >
+                <polyline
+                  points="0,46 20,42 40,44 60,34 80,36 100,24 120,28 140,16 160,20 180,8 200,12 220,4"
+                  stroke="#39836d"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <div class="app-mockup-rows">
+                <div class="app-mockup-row">
+                  <span>Movimiento diario</span><span class="app-mockup-row-up">+0,34&nbsp;%</span>
+                </div>
+                <div class="app-mockup-row">
+                  <span>Movimiento diario</span><span class="app-mockup-row-up">+0,18&nbsp;%</span>
+                </div>
+                <div class="app-mockup-row">
+                  <span>Movimiento diario</span
+                  ><span class="app-mockup-row-down">-0,05&nbsp;%</span>
+                </div>
+              </div>
+            </div>
+            <header class="section-header header-right">
+              <h2 class="section-title" data-i18n="inversionTitle">INVERSIÓN</h2>
+              <p class="section-subtitle section-subtitle-italic">
+                Estructura diseñada para permitir flexibilidad y acceso permanente al capital.
+              </p>
+            </header>
+          </div>
           <div class="steps-grid">
             <div class="step-card">
               <span class="step-icon" aria-hidden="true"
@@ -505,11 +542,45 @@
       <section class="section section-dark" id="resultados">
         <div class="container">
           <header class="section-header header-center">
-            <h2 class="section-title" data-i18n="resultadosTitle">RESULTADOS HISTÓRICOS</h2>
+            <h2 class="section-title results-title">
+              <span class="results-title-line" data-i18n="resultadosTitleLine1">RESULTADOS</span
+              ><span
+                class="results-title-line results-title-accent"
+                data-i18n="resultadosTitleLine2"
+                >HISTÓRICOS</span
+              >
+            </h2>
             <p class="section-subtitle section-subtitle-italic" data-i18n="resultadosSubtitle">
               Rendimientos anuales en USD, netos de comisiones del servicio.
             </p>
           </header>
+          <div class="results-summary" aria-hidden="true">
+            <svg
+              class="results-summary-chart"
+              viewBox="0 0 300 90"
+              preserveAspectRatio="none"
+              fill="none"
+            >
+              <polyline
+                points="0,76 28,70 56,73 84,58 112,61 140,44 168,48 196,30 224,34 252,16 280,20 300,10"
+                stroke="var(--wb-green-2)"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <div class="results-summary-stats">
+              <div class="results-summary-stat">
+                <span class="results-summary-value">+160%</span>
+                <span class="results-summary-label">Acumulado jun 2022 – jun 2026</span>
+              </div>
+              <span class="results-summary-sep"></span>
+              <div class="results-summary-stat">
+                <span class="results-summary-value">~2%</span>
+                <span class="results-summary-label">Promedio mensual histórico</span>
+              </div>
+            </div>
+          </div>
           <div class="results-grid">
             <div class="result-card">
               <span class="result-pct" data-value="32.4"

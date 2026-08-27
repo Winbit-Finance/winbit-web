@@ -48,6 +48,8 @@ const translations = {
 
     // Resultados históricos
     resultadosTitle: 'Resultados históricos',
+    resultadosTitleLine1: 'Resultados',
+    resultadosTitleLine2: 'históricos',
     resultadosSubtitle: 'Rendimientos anuales en USD, netos de comisiones del servicio.',
     resultadosDisclaimer:
       'Resultados históricos. No constituyen promesa ni garantía de rendimientos futuros.',
@@ -138,6 +140,8 @@ const translations = {
 
     // Resultados históricos
     resultadosTitle: 'Historical returns',
+    resultadosTitleLine1: 'Historical',
+    resultadosTitleLine2: 'returns',
     resultadosSubtitle: 'Annual returns in USD, net of service fees.',
     resultadosDisclaimer:
       'Historical results. They do not constitute a promise or guarantee of future returns.',

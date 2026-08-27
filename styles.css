@@ -122,6 +122,29 @@ img {
 .section-cream {
   background-color: var(--wb-cream);
   color: var(--wb-ink);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Grafiquito de fondo, apenas perceptible: evita que las secciones crema
+   queden "peladas" cuando no hay foto ni ilustración. Puramente decorativo,
+   no representa datos reales. */
+.section-cream::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20420%20960%22%20fill%3D%22none%22%3E%0A%3Cg%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.05%22%20stroke-width%3D%221%22%3E%0A%3Cline%20x1%3D%2220%22%20y1%3D%22120%22%20x2%3D%22400%22%20y2%3D%22120%22%2F%3E%0A%3Cline%20x1%3D%2220%22%20y1%3D%22340%22%20x2%3D%22400%22%20y2%3D%22340%22%2F%3E%0A%3Cline%20x1%3D%2220%22%20y1%3D%22560%22%20x2%3D%22400%22%20y2%3D%22560%22%2F%3E%0A%3Cline%20x1%3D%2220%22%20y1%3D%22780%22%20x2%3D%22400%22%20y2%3D%22780%22%2F%3E%0A%3C%2Fg%3E%0A%3Cpolyline%20points%3D%2240%2C860%2090%2C820%20130%2C840%20175%2C760%20210%2C790%20250%2C700%20285%2C730%20320%2C640%20350%2C660%20380%2C560%22%20fill%3D%22none%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.09%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%0A%3Ccircle%20cx%3D%22130%22%20cy%3D%22840%22%20r%3D%223.5%22%20fill%3D%22%2339836d%22%20fill-opacity%3D%220.14%22%2F%3E%0A%3Ccircle%20cx%3D%22250%22%20cy%3D%22700%22%20r%3D%223.5%22%20fill%3D%22%2339836d%22%20fill-opacity%3D%220.14%22%2F%3E%0A%3Ccircle%20cx%3D%22380%22%20cy%3D%22560%22%20r%3D%224.5%22%20fill%3D%22%2339836d%22%20fill-opacity%3D%220.22%22%2F%3E%0A%3C%2Fsvg%3E');
+  background-repeat: no-repeat;
+  background-position: right -40px top -20px;
+  background-size: 420px 960px;
+  opacity: 0.9;
+}
+
+.section-cream .container {
+  position: relative;
+  z-index: 1;
 }
 
 .section-cream .section-title {
@@ -263,6 +286,22 @@ img {
 .section-header.header-center .section-title::after {
   left: 50%;
   transform: translateX(-50%);
+}
+
+/* Título de Resultados en dos líneas / dos tonos, al estilo de los
+   documentos de referencia (mismo texto, sin cambios, solo partido en
+   dos spans para el efecto tipográfico). */
+.results-title {
+  text-align: center;
+}
+
+.results-title-line {
+  display: block;
+}
+
+.results-title-accent {
+  color: var(--wb-green-2) !important;
+  -webkit-text-fill-color: var(--wb-green-2) !important;
 }
 
 .section-subtitle {
@@ -538,6 +577,14 @@ img {
   background-color: var(--wb-carbon);
 }
 
+/* Bug real encontrado en la revisión: al ser .hero un flex-container, su
+   .container hijo se encogía al ancho de su contenido en vez de usar
+   max-width: esto dejaba sin espacio al gráfico decorativo del hero y lo
+   hacía superponerse al subtítulo en pantallas anchas. */
+.hero .container {
+  width: 100%;
+}
+
 #hero-canvas {
   position: absolute;
   top: 50%;
@@ -810,6 +857,120 @@ img {
   }
 }
 
+/* ==================== Inversión: intro + mockup de app ==================== */
+.inversion-intro {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 2.4rem;
+  margin-bottom: var(--spacing-2xl);
+}
+
+.inversion-intro .section-header {
+  margin-bottom: 0;
+}
+
+@media (min-width: 900px) {
+  .inversion-intro {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+  }
+
+  .inversion-intro .section-header {
+    flex: 1 1 auto;
+  }
+}
+
+/* Tarjeta ilustrativa de la app (cuenta demo, sin datos reales) */
+.app-mockup {
+  position: relative;
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 280px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(20, 20, 15, 0.1);
+  border-radius: 16px;
+  padding: 20px 22px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 20px 48px -20px rgba(13, 15, 14, 0.28);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.app-mockup-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.app-mockup-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--wb-ink-muted);
+}
+
+.app-mockup-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--wb-green);
+}
+
+.app-mockup-balance {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--wb-ink);
+  line-height: 1;
+}
+
+.app-mockup-delta {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--wb-green);
+  margin-top: -4px;
+}
+
+.app-mockup-chart {
+  display: block;
+  width: 100%;
+  height: 44px;
+  margin: 6px 0 4px;
+}
+
+.app-mockup-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(20, 20, 15, 0.08);
+}
+
+.app-mockup-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: var(--wb-ink-muted);
+}
+
+.app-mockup-row-up {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--wb-green);
+}
+
+.app-mockup-row-down {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--wb-negative);
+}
+
 /* ==================== Process Steps ==================== */
 .steps-grid {
   display: grid;
@@ -910,6 +1071,46 @@ img {
   /* overflow: hidden eliminado â€” permitir que el tooltip sobresalga */
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
+}
+
+/* Índice numerado tipo "01/02/03" en la esquina de cada card, apenas
+   visible — puramente decorativo, generado con CSS counters (no toca
+   el texto ni el HTML de cada paso). */
+.steps-grid {
+  counter-reset: wb-step;
+}
+
+.steps-grid .step-card {
+  counter-increment: wb-step;
+}
+
+.transparency-grid {
+  counter-reset: wb-step;
+}
+
+.transparency-grid .transparency-item {
+  counter-increment: wb-step;
+}
+
+.steps-grid .step-card::after,
+.transparency-grid .transparency-item::after {
+  content: counter(wb-step, decimal-leading-zero);
+  position: absolute;
+  top: 16px;
+  right: 22px;
+  font-family: var(--font-display);
+  font-size: 2.1rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--wb-green-2);
+  opacity: 0.22;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.section-cream .steps-grid .step-card::after {
+  color: var(--wb-green);
+  opacity: 0.18;
 }
 
 .step-icon {
@@ -1052,6 +1253,7 @@ img {
   transition: border-color var(--transition-base);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  position: relative;
 }
 
 .transparency-item:hover {
@@ -1092,6 +1294,72 @@ img {
 }
 
 /* ==================== Resultados HistÃ³ricos ==================== */
+
+/* Panel resumen decorativo, con las cifras ya aprobadas en la guÃ­a de
+   marca (160% acumulado / 2% promedio mensual). Puramente visual, no
+   reemplaza ni modifica la grilla de resultados animada de abajo. */
+.results-summary {
+  position: relative;
+  max-width: 780px;
+  margin: 0 auto 2.4rem;
+  padding: 28px clamp(20px, 4vw, 48px) 22px;
+  border: 1px solid rgba(236, 228, 213, 0.1);
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(71, 151, 133, 0.07) 0%, rgba(71, 151, 133, 0.02) 100%);
+  overflow: hidden;
+}
+
+.results-summary-chart {
+  display: block;
+  width: 100%;
+  height: 64px;
+  margin-bottom: 18px;
+  opacity: 0.55;
+}
+
+.results-summary-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(20px, 5vw, 56px);
+  flex-wrap: wrap;
+}
+
+.results-summary-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+}
+
+.results-summary-value {
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 3.4vw, 2.3rem);
+  font-weight: 700;
+  color: var(--wb-cream);
+  line-height: 1;
+}
+
+.results-summary-label {
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: rgba(236, 228, 213, 0.6);
+}
+
+.results-summary-sep {
+  width: 1px;
+  height: 40px;
+  background: rgba(236, 228, 213, 0.14);
+}
+
+@media (max-width: 480px) {
+  .results-summary-sep {
+    display: none;
+  }
+}
+
 .results-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
