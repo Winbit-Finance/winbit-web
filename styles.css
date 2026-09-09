@@ -118,31 +118,6 @@ img {
   position: relative;
 }
 
-/* Fondo ilustrativo para Transparencia (la sección oscura que quedaba más
-   "pelada" al no tener panel propio como Resultados). Velas + puntos, en la
-   misma línea que el mockup de Transparencia. */
-#transparencia {
-  position: relative;
-  overflow: hidden;
-}
-
-#transparencia::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20320%201400%22%20fill%3D%22none%22%3E%0A%3Cpolyline%20points%3D%2232%2C1285.3846153846152%20170%2C1205.7692307692307%20120%2C1080.1538461538462%2050%2C993.5384615384615%20182%2C895.9230769230769%20120%2C762.3076923076923%2034%2C658.6923076923076%20173%2C566.0769230769231%20119%2C472.46153846153845%2046%2C357.8461538461538%20188%2C244.23076923076923%20114%2C147.6153846153846%2044%2C56.0%22%20fill%3D%22none%22%20stroke%3D%22%23479785%22%20stroke-opacity%3D%220.22%22%20stroke-width%3D%221.5%22%20stroke-dasharray%3D%221%206%22%20stroke-linecap%3D%22round%22/%3E%0A%3Cline%20x1%3D%2244%22%20y1%3D%2230.174999999999997%22%20x2%3D%2244%22%20y2%3D%2296.825%22%20stroke%3D%22%23479785%22%20stroke-opacity%3D%220.20%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%2240.5%22%20y%3D%2242.0%22%20width%3D%227%22%20height%3D%2243%22%20fill%3D%22%23479785%22%20fill-opacity%3D%220.14%22/%3E%0A%3Cline%20x1%3D%22114%22%20y1%3D%22122.06538461538462%22%20x2%3D%22114%22%20y2%3D%22187.16538461538462%22%20stroke%3D%22%23479785%22%20stroke-opacity%3D%220.20%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%22110.5%22%20y%3D%22133.6153846153846%22%20width%3D%227%22%20height%3D%2242%22%20fill%3D%22%23479785%22%20fill-opacity%3D%220.14%22/%3E%0A%3Cline%20x1%3D%22188%22%20y1%3D%22221.70576923076922%22%20x2%3D%22188%22%20y2%3D%22269.7557692307692%22%20stroke%3D%22%23479785%22%20stroke-opacity%3D%220.20%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%22184.5%22%20y%3D%22230.23076923076923%22%20width%3D%227%22%20height%3D%2231%22%20fill%3D%22%23479785%22%20fill-opacity%3D%220.14%22/%3E%0A%3Cline%20x1%3D%2246%22%20y1%3D%22331.19615384615383%22%20x2%3D%2246%22%20y2%3D%22402.4961538461538%22%20stroke%3D%22%23479785%22%20stroke-opacity%3D%220.20%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%2242.5%22%20y%3D%22343.8461538461538%22%20width%3D%227%22%20height%3D%2246%22%20fill%3D%22%23479785%22%20fill-opacity%3D%220.14%22/%3E%0A%3Cline%20x1%3D%22119%22%20y1%3D%22449.9365384615385%22%20x2%3D%22119%22%20y2%3D%22497.98653846153843%22%20stroke%3D%22%23479785%22%20stroke-opacity%3D%220.20%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%22115.5%22%20y%3D%22458.46153846153845%22%20width%3D%227%22%20height%3D%2231%22%20fill%3D%22%23479785%22%20fill-opacity%3D%220.14%22/%3E%0A%3Cline%20x1%3D%22173%22%20y1%3D%22542.4519230769231%22%20x2%3D%22173%22%20y2%3D%22596.7019230769231%22%20stroke%3D%22%23479785%22%20stroke-opacity%3D%220.20%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%22169.5%22%20y%3D%22552.0769230769231%22%20width%3D%227%22%20height%3D%2235%22%20fill%3D%22%23479785%22%20fill-opacity%3D%220.14%22/%3E%0A%3Cline%20x1%3D%2234%22%20y1%3D%22632.8673076923076%22%20x2%3D%2234%22%20y2%3D%22699.5173076923077%22%20stroke%3D%22%23479785%22%20stroke-opacity%3D%220.20%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%2230.5%22%20y%3D%22644.6923076923076%22%20width%3D%227%22%20height%3D%2243%22%20fill%3D%22%23479785%22%20fill-opacity%3D%220.14%22/%3E%0A%3Cline%20x1%3D%22120%22%20y1%3D%22735.9326923076923%22%20x2%3D%22120%22%20y2%3D%22805.6826923076923%22%20stroke%3D%22%23479785%22%20stroke-opacity%3D%220.20%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%22116.5%22%20y%3D%22748.3076923076923%22%20width%3D%227%22%20height%3D%2245%22%20fill%3D%22%23479785%22%20fill-opacity%3D%220.14%22/%3E%0A%3Cline%20x1%3D%22182%22%20y1%3D%22870.9230769230769%22%20x2%3D%22182%22%20y2%3D%22932.9230769230769%22%20stroke%3D%22%23479785%22%20stroke-opacity%3D%220.20%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%22178.5%22%20y%3D%22881.9230769230769%22%20width%3D%227%22%20height%3D%2240%22%20fill%3D%22%23479785%22%20fill-opacity%3D%220.14%22/%3E%0A%3Cline%20x1%3D%2250%22%20y1%3D%22967.1634615384615%22%20x2%3D%2250%22%20y2%3D%221036.9134615384614%22%20stroke%3D%22%23479785%22%20stroke-opacity%3D%220.20%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%2246.5%22%20y%3D%22979.5384615384615%22%20width%3D%227%22%20height%3D%2245%22%20fill%3D%22%23479785%22%20fill-opacity%3D%220.14%22/%3E%0A%3Cline%20x1%3D%22120%22%20y1%3D%221053.7788461538462%22%20x2%3D%22120%22%20y2%3D%221123.5288461538462%22%20stroke%3D%22%23479785%22%20stroke-opacity%3D%220.20%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%22116.5%22%20y%3D%221066.1538461538462%22%20width%3D%227%22%20height%3D%2245%22%20fill%3D%22%23479785%22%20fill-opacity%3D%220.14%22/%3E%0A%3Cline%20x1%3D%22170%22%20y1%3D%221180.2192307692308%22%20x2%3D%22170%22%20y2%3D%221245.3192307692307%22%20stroke%3D%22%23479785%22%20stroke-opacity%3D%220.20%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%22166.5%22%20y%3D%221191.7692307692307%22%20width%3D%227%22%20height%3D%2242%22%20fill%3D%22%23479785%22%20fill-opacity%3D%220.14%22/%3E%0A%3Cline%20x1%3D%2232%22%20y1%3D%221263.9596153846153%22%20x2%3D%2232%22%20y2%3D%221305.8096153846152%22%20stroke%3D%22%23479785%22%20stroke-opacity%3D%220.20%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%2228.5%22%20y%3D%221271.3846153846152%22%20width%3D%227%22%20height%3D%2227%22%20fill%3D%22%23479785%22%20fill-opacity%3D%220.14%22/%3E%0A%3Ccircle%20cx%3D%22121%22%20cy%3D%221203%22%20r%3D%221%22%20fill%3D%22%23a7aaa2%22%20fill-opacity%3D%220.16%22/%3E%0A%3Ccircle%20cx%3D%22189%22%20cy%3D%221368%22%20r%3D%221.3%22%20fill%3D%22%23a7aaa2%22%20fill-opacity%3D%220.16%22/%3E%0A%3Ccircle%20cx%3D%22297%22%20cy%3D%22933%22%20r%3D%221%22%20fill%3D%22%23a7aaa2%22%20fill-opacity%3D%220.16%22/%3E%0A%3Ccircle%20cx%3D%22240%22%20cy%3D%221032%22%20r%3D%221%22%20fill%3D%22%23a7aaa2%22%20fill-opacity%3D%220.16%22/%3E%0A%3Ccircle%20cx%3D%2298%22%20cy%3D%221267%22%20r%3D%221.3%22%20fill%3D%22%23a7aaa2%22%20fill-opacity%3D%220.16%22/%3E%0A%3Ccircle%20cx%3D%22276%22%20cy%3D%221328%22%20r%3D%221.3%22%20fill%3D%22%23a7aaa2%22%20fill-opacity%3D%220.16%22/%3E%0A%3Ccircle%20cx%3D%22203%22%20cy%3D%221227%22%20r%3D%221%22%20fill%3D%22%23a7aaa2%22%20fill-opacity%3D%220.16%22/%3E%0A%3Ccircle%20cx%3D%22118%22%20cy%3D%221225%22%20r%3D%221%22%20fill%3D%22%23a7aaa2%22%20fill-opacity%3D%220.16%22/%3E%0A%3Ccircle%20cx%3D%22267%22%20cy%3D%221099%22%20r%3D%221%22%20fill%3D%22%23a7aaa2%22%20fill-opacity%3D%220.16%22/%3E%0A%3Ccircle%20cx%3D%2232%22%20cy%3D%22981%22%20r%3D%221%22%20fill%3D%22%23a7aaa2%22%20fill-opacity%3D%220.16%22/%3E%0A%3Ccircle%20cx%3D%22154%22%20cy%3D%221299%22%20r%3D%221%22%20fill%3D%22%23a7aaa2%22%20fill-opacity%3D%220.16%22/%3E%0A%3Ccircle%20cx%3D%22137%22%20cy%3D%221142%22%20r%3D%221.3%22%20fill%3D%22%23a7aaa2%22%20fill-opacity%3D%220.16%22/%3E%0A%3Ccircle%20cx%3D%22218%22%20cy%3D%221102%22%20r%3D%221.3%22%20fill%3D%22%23a7aaa2%22%20fill-opacity%3D%220.16%22/%3E%0A%3Ccircle%20cx%3D%2268%22%20cy%3D%221349%22%20r%3D%221.3%22%20fill%3D%22%23a7aaa2%22%20fill-opacity%3D%220.16%22/%3E%0A%3Ccircle%20cx%3D%2249%22%20cy%3D%22918%22%20r%3D%221%22%20fill%3D%22%23a7aaa2%22%20fill-opacity%3D%220.16%22/%3E%0A%3Ccircle%20cx%3D%22253%22%20cy%3D%221011%22%20r%3D%221.3%22%20fill%3D%22%23a7aaa2%22%20fill-opacity%3D%220.16%22/%3E%0A%3Ccircle%20cx%3D%22223%22%20cy%3D%221298%22%20r%3D%221.3%22%20fill%3D%22%23a7aaa2%22%20fill-opacity%3D%220.16%22/%3E%0A%3Ccircle%20cx%3D%22215%22%20cy%3D%221159%22%20r%3D%221.3%22%20fill%3D%22%23a7aaa2%22%20fill-opacity%3D%220.16%22/%3E%0A%3Ccircle%20cx%3D%22293%22%20cy%3D%221079%22%20r%3D%221.3%22%20fill%3D%22%23a7aaa2%22%20fill-opacity%3D%220.16%22/%3E%0A%3Ccircle%20cx%3D%22299%22%20cy%3D%221018%22%20r%3D%221.3%22%20fill%3D%22%23a7aaa2%22%20fill-opacity%3D%220.16%22/%3E%0A%3Ccircle%20cx%3D%2214%22%20cy%3D%221338%22%20r%3D%221.3%22%20fill%3D%22%23a7aaa2%22%20fill-opacity%3D%220.16%22/%3E%0A%3Ccircle%20cx%3D%2283%22%20cy%3D%221257%22%20r%3D%221.3%22%20fill%3D%22%23a7aaa2%22%20fill-opacity%3D%220.16%22/%3E%0A%3Ccircle%20cx%3D%22277%22%20cy%3D%221363%22%20r%3D%221%22%20fill%3D%22%23a7aaa2%22%20fill-opacity%3D%220.16%22/%3E%0A%3Ccircle%20cx%3D%22108%22%20cy%3D%221224%22%20r%3D%221.3%22%20fill%3D%22%23a7aaa2%22%20fill-opacity%3D%220.16%22/%3E%0A%3Ccircle%20cx%3D%22145%22%20cy%3D%22963%22%20r%3D%221%22%20fill%3D%22%23a7aaa2%22%20fill-opacity%3D%220.16%22/%3E%0A%3Ccircle%20cx%3D%22246%22%20cy%3D%221337%22%20r%3D%221.3%22%20fill%3D%22%23a7aaa2%22%20fill-opacity%3D%220.16%22/%3E%0A%3Ccircle%20cx%3D%2245%22%20cy%3D%221076%22%20r%3D%221%22%20fill%3D%22%23a7aaa2%22%20fill-opacity%3D%220.16%22/%3E%0A%3Ccircle%20cx%3D%22210%22%20cy%3D%221359%22%20r%3D%221%22%20fill%3D%22%23a7aaa2%22%20fill-opacity%3D%220.16%22/%3E%0A%3C/svg%3E');
-  background-repeat: no-repeat;
-  background-position: right -30px top;
-  background-size: 300px 100%;
-}
-
-#transparencia .container {
-  position: relative;
-  z-index: 1;
-}
-
 /* Crema: proceso, inversión, preguntas — educación y funcionalidades. */
 .section-cream {
   background-color: var(--wb-cream);
@@ -151,27 +126,40 @@ img {
   overflow: hidden;
 }
 
-/* Grafiquito de fondo, apenas perceptible: evita que las secciones crema
-   queden "peladas" cuando no hay foto ni ilustración. Puramente decorativo,
-   no representa datos reales. */
+/* Fondo ilustrativo extremadamente sutil (velas fantasma + retícula tenue)
+   solo en Proceso y Transparencia — Preguntas queda sin gráfico, solo crema
+   + líneas divisorias, tal como se pidió. Oculto en mobile: sin margen para
+   que respire. */
 @media (max-width: 767px) {
-  .section-cream::before,
+  #proceso::before,
   #transparencia::before {
     display: none;
   }
 }
 
-.section-cream::before {
-  content: '';
+#proceso,
+#transparencia {
+  position: relative;
+  overflow: hidden;
+}
+
+#proceso::before,
+#transparencia::before {
+  content: "";
   position: absolute;
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20320%201400%22%20fill%3D%22none%22%3E%0A%3Cpolyline%20points%3D%22129%2C1305.857142857143%2067%2C1222.7142857142858%20191%2C1105.5714285714284%20138%2C1019.4285714285713%2070%2C924.2857142857142%20208%2C810.1428571428571%20137%2C723.0%2052%2C619.8571428571429%20192%2C528.7142857142857%20136%2C424.57142857142856%2061%2C339.42857142857144%20192%2C250.28571428571428%20132%2C147.14285714285714%2060%2C60.0%22%20fill%3D%22none%22%20stroke%3D%22%2339836d%22%20stroke-opacity%3D%220.16%22%20stroke-width%3D%221.5%22%20stroke-dasharray%3D%221%206%22%20stroke-linecap%3D%22round%22/%3E%0A%3Cline%20x1%3D%2260%22%20y1%3D%2233.9%22%20x2%3D%2260%22%20y2%3D%2293.1%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.14%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%2256.5%22%20y%3D%2245.0%22%20width%3D%227%22%20height%3D%2237%22%20fill%3D%22%2314140f%22%20fill-opacity%3D%220.09%22/%3E%0A%3Cline%20x1%3D%22132%22%20y1%3D%22122.84285714285714%22%20x2%3D%22132%22%20y2%3D%22172.44285714285715%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.14%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%22128.5%22%20y%3D%22132.14285714285714%22%20width%3D%227%22%20height%3D%2231%22%20fill%3D%22%2314140f%22%20fill-opacity%3D%220.09%22/%3E%0A%3Cline%20x1%3D%22192%22%20y1%3D%22225.0857142857143%22%20x2%3D%22192%22%20y2%3D%22279.48571428571427%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.14%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%22188.5%22%20y%3D%22235.28571428571428%22%20width%3D%227%22%20height%3D%2234%22%20fill%3D%22%2314140f%22%20fill-opacity%3D%220.09%22/%3E%0A%3Cline%20x1%3D%2261%22%20y1%3D%22315.12857142857143%22%20x2%3D%2261%22%20y2%3D%22364.72857142857146%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.14%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%2257.5%22%20y%3D%22324.42857142857144%22%20width%3D%227%22%20height%3D%2231%22%20fill%3D%22%2314140f%22%20fill-opacity%3D%220.09%22/%3E%0A%3Cline%20x1%3D%22136%22%20y1%3D%22400.57142857142856%22%20x2%3D%22136%22%20y2%3D%22448.57142857142856%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.14%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%22132.5%22%20y%3D%22409.57142857142856%22%20width%3D%227%22%20height%3D%2230%22%20fill%3D%22%2314140f%22%20fill-opacity%3D%220.09%22/%3E%0A%3Cline%20x1%3D%22192%22%20y1%3D%22497.5142857142857%22%20x2%3D%22192%22%20y2%3D%22583.9142857142857%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.14%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%22188.5%22%20y%3D%22513.7142857142857%22%20width%3D%227%22%20height%3D%2254%22%20fill%3D%22%2314140f%22%20fill-opacity%3D%220.09%22/%3E%0A%3Cline%20x1%3D%2252%22%20y1%3D%22594.9571428571429%22%20x2%3D%2252%22%20y2%3D%22647.7571428571429%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.14%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%2248.5%22%20y%3D%22604.8571428571429%22%20width%3D%227%22%20height%3D%2233%22%20fill%3D%22%2314140f%22%20fill-opacity%3D%220.09%22/%3E%0A%3Cline%20x1%3D%22137%22%20y1%3D%22698.7%22%20x2%3D%22137%22%20y2%3D%22748.3%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.14%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%22133.5%22%20y%3D%22708.0%22%20width%3D%227%22%20height%3D%2231%22%20fill%3D%22%2314140f%22%20fill-opacity%3D%220.09%22/%3E%0A%3Cline%20x1%3D%22208%22%20y1%3D%22782.5428571428571%22%20x2%3D%22208%22%20y2%3D%22849.7428571428571%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.14%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%22204.5%22%20y%3D%22795.1428571428571%22%20width%3D%227%22%20height%3D%2242%22%20fill%3D%22%2314140f%22%20fill-opacity%3D%220.09%22/%3E%0A%3Cline%20x1%3D%2270%22%20y1%3D%22899.9857142857143%22%20x2%3D%2270%22%20y2%3D%22949.5857142857142%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.14%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%2266.5%22%20y%3D%22909.2857142857142%22%20width%3D%227%22%20height%3D%2231%22%20fill%3D%22%2314140f%22%20fill-opacity%3D%220.09%22/%3E%0A%3Cline%20x1%3D%22138%22%20y1%3D%22988.5285714285714%22%20x2%3D%22138%22%20y2%3D%221073.3285714285714%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.14%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%22134.5%22%20y%3D%221004.4285714285713%22%20width%3D%227%22%20height%3D%2253%22%20fill%3D%22%2314140f%22%20fill-opacity%3D%220.09%22/%3E%0A%3Cline%20x1%3D%22191%22%20y1%3D%221081.5714285714284%22%20x2%3D%22191%22%20y2%3D%221129.5714285714284%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.14%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%22187.5%22%20y%3D%221090.5714285714284%22%20width%3D%227%22%20height%3D%2230%22%20fill%3D%22%2314140f%22%20fill-opacity%3D%220.09%22/%3E%0A%3Cline%20x1%3D%2267%22%20y1%3D%221196.9142857142858%22%20x2%3D%2267%22%20y2%3D%221254.5142857142857%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.14%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%2263.5%22%20y%3D%221207.7142857142858%22%20width%3D%227%22%20height%3D%2236%22%20fill%3D%22%2314140f%22%20fill-opacity%3D%220.09%22/%3E%0A%3Cline%20x1%3D%22129%22%20y1%3D%221279.757142857143%22%20x2%3D%22129%22%20y2%3D%221338.9571428571428%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.14%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%22125.5%22%20y%3D%221290.857142857143%22%20width%3D%227%22%20height%3D%2237%22%20fill%3D%22%2314140f%22%20fill-opacity%3D%220.09%22/%3E%0A%3Ccircle%20cx%3D%2260%22%20cy%3D%2260.0%22%20r%3D%222.4%22%20fill%3D%22%2339836d%22%20fill-opacity%3D%220.22%22/%3E%3Ccircle%20cx%3D%2261%22%20cy%3D%22339.42857142857144%22%20r%3D%222.4%22%20fill%3D%22%2339836d%22%20fill-opacity%3D%220.22%22/%3E%3Ccircle%20cx%3D%2252%22%20cy%3D%22619.8571428571429%22%20r%3D%222.4%22%20fill%3D%22%2339836d%22%20fill-opacity%3D%220.22%22/%3E%3Ccircle%20cx%3D%2270%22%20cy%3D%22924.2857142857142%22%20r%3D%222.4%22%20fill%3D%22%2339836d%22%20fill-opacity%3D%220.22%22/%3E%3Ccircle%20cx%3D%2267%22%20cy%3D%221222.7142857142858%22%20r%3D%222.4%22%20fill%3D%22%2339836d%22%20fill-opacity%3D%220.22%22/%3E%0A%3C/svg%3E');
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20320%201400%22%20fill%3D%22none%22%3E%0A%3Cline%20x1%3D%220%22%20y1%3D%22150%22%20x2%3D%22320%22%20y2%3D%22150%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.035%22%20stroke-width%3D%221%22/%3E%0A%3Cline%20x1%3D%220%22%20y1%3D%22450%22%20x2%3D%22320%22%20y2%3D%22450%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.035%22%20stroke-width%3D%221%22/%3E%0A%3Cline%20x1%3D%220%22%20y1%3D%22750%22%20x2%3D%22320%22%20y2%3D%22750%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.035%22%20stroke-width%3D%221%22/%3E%0A%3Cline%20x1%3D%220%22%20y1%3D%221050%22%20x2%3D%22320%22%20y2%3D%221050%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.035%22%20stroke-width%3D%221%22/%3E%0A%3Cline%20x1%3D%220%22%20y1%3D%221300%22%20x2%3D%22320%22%20y2%3D%221300%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.035%22%20stroke-width%3D%221%22/%3E%0A%3Cpolyline%20points%3D%22113%2C1276.3636363636365%2055%2C1161.7272727272727%20183%2C1032.090909090909%20119%2C902.4545454545455%2055%2C773.8181818181819%20182%2C648.1818181818182%20128%2C540.5454545454545%2057%2C416.90909090909093%20197%2C283.27272727272725%20125%2C173.63636363636363%2047%2C43.0%22%20fill%3D%22none%22%20stroke%3D%22%2339836d%22%20stroke-opacity%3D%220.10%22%20stroke-width%3D%221%22%20stroke-dasharray%3D%221%207%22%20stroke-linecap%3D%22round%22/%3E%0A%3Cline%20x1%3D%2247%22%20y1%3D%2219.5%22%20x2%3D%2247%22%20y2%3D%2288.5%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.06%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%2243.5%22%20y%3D%2231.0%22%20width%3D%227%22%20height%3D%2246%22%20fill%3D%22none%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.06%22%20stroke-width%3D%221%22/%3E%0A%3Cline%20x1%3D%22125%22%20y1%3D%22153.4%22%20x2%3D%22125%22%20y2%3D%22202.9%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.06%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%22121.5%22%20y%3D%22161.63636363636363%22%20width%3D%227%22%20height%3D%2233%22%20fill%3D%22none%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.06%22%20stroke-width%3D%221%22/%3E%0A%3Cline%20x1%3D%22197%22%20y1%3D%22259.0%22%20x2%3D%22197%22%20y2%3D%22332.5%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.06%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%22193.5%22%20y%3D%22271.27272727272725%22%20width%3D%227%22%20height%3D%2249%22%20fill%3D%22none%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.06%22%20stroke-width%3D%221%22/%3E%0A%3Cline%20x1%3D%2257%22%20y1%3D%22397.7%22%20x2%3D%2257%22%20y2%3D%22441.2%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.06%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%2253.5%22%20y%3D%22404.90909090909093%22%20width%3D%227%22%20height%3D%2229%22%20fill%3D%22none%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.06%22%20stroke-width%3D%221%22/%3E%0A%3Cline%20x1%3D%22128%22%20y1%3D%22520.8%22%20x2%3D%22128%22%20y2%3D%22567.3%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.06%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%22124.5%22%20y%3D%22528.5454545454545%22%20width%3D%227%22%20height%3D%2231%22%20fill%3D%22none%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.06%22%20stroke-width%3D%221%22/%3E%0A%3Cline%20x1%3D%22182%22%20y1%3D%22627.4%22%20x2%3D%22182%22%20y2%3D%22679.9%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.06%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%22178.5%22%20y%3D%22636.1818181818182%22%20width%3D%227%22%20height%3D%2235%22%20fill%3D%22none%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.06%22%20stroke-width%3D%221%22/%3E%0A%3Cline%20x1%3D%2255%22%20y1%3D%22754.8%22%20x2%3D%2255%22%20y2%3D%22796.8%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.06%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%2251.5%22%20y%3D%22761.8181818181819%22%20width%3D%227%22%20height%3D%2228%22%20fill%3D%22none%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.06%22%20stroke-width%3D%221%22/%3E%0A%3Cline%20x1%3D%22119%22%20y1%3D%22879.0%22%20x2%3D%22119%22%20y2%3D%22948.0%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.06%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%22115.5%22%20y%3D%22890.4545454545455%22%20width%3D%227%22%20height%3D%2246%22%20fill%3D%22none%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.06%22%20stroke-width%3D%221%22/%3E%0A%3Cline%20x1%3D%22183%22%20y1%3D%221008.3%22%20x2%3D%22183%22%20y2%3D%221078.8%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.06%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%22179.5%22%20y%3D%221020.0909090909091%22%20width%3D%227%22%20height%3D%2247%22%20fill%3D%22none%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.06%22%20stroke-width%3D%221%22/%3E%0A%3Cline%20x1%3D%2255%22%20y1%3D%221140.2%22%20x2%3D%2255%22%20y2%3D%221197.2%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.06%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%2251.5%22%20y%3D%221149.7272727272727%22%20width%3D%227%22%20height%3D%2238%22%20fill%3D%22none%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.06%22%20stroke-width%3D%221%22/%3E%0A%3Cline%20x1%3D%22113%22%20y1%3D%221254.1%22%20x2%3D%22113%22%20y2%3D%221315.6%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.06%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%22109.5%22%20y%3D%221264.3636363636365%22%20width%3D%227%22%20height%3D%2241%22%20fill%3D%22none%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.06%22%20stroke-width%3D%221%22/%3E%0A%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right -30px top;
-  background-size: 300px 100%;
-  opacity: 0.9;
+  background-position: right -20px top;
+  background-size: 260px 100%;
+}
+
+#proceso .container,
+#transparencia .container {
+  position: relative;
+  z-index: 1;
 }
 
 .section-cream .container {
@@ -646,41 +634,9 @@ img {
   }
 }
 
-/* Hero background â€” shifted right so chart doesn't compete with text */
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(
-      to right,
-      rgba(13, 15, 14, 0.75) 0%,
-      rgba(13, 15, 14, 0.35) 45%,
-      rgba(13, 15, 14, 0.15) 100%
-    ),
-    linear-gradient(
-      to bottom,
-      rgba(13, 15, 14, 0.2) 0%,
-      rgba(13, 15, 14, 0.35) 50%,
-      rgba(13, 15, 14, 0.65) 100%
-    );
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* Hero-specific background with higher visibility and shifted right */
-.hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url('assets/hero-bg-2.png');
-  background-size: cover;
-  background-position: 75% center;
-  background-repeat: no-repeat;
-  opacity: 0.55;
-  z-index: -1;
-  pointer-events: none;
-}
+/* La foto de velas con glow (hero-bg-2.png) se retiró del hero: no
+   correspondía a la paleta de marca y leía "estilo cripto". El fondo del
+   hero ahora es carbón sólido + el gráfico abstracto de .hero-visual. */
 
 .hero-content {
   display: flex;
@@ -723,6 +679,22 @@ img {
   opacity: 0;
 }
 
+/* Isotipo repetido sobre el título del hero, como en la pieza institucional
+   original (portada de reportes, etc.) */
+.hero-logo {
+  display: block;
+  height: 42px;
+  width: auto;
+  margin-bottom: 1.6rem;
+}
+
+@media (max-width: 767px) {
+  .hero-logo {
+    height: 34px;
+    margin-bottom: 1.2rem;
+  }
+}
+
 /* Hero title â€” two typographic lines, condensed brand display face */
 .hero-title {
   display: block;
@@ -762,14 +734,21 @@ img {
   max-width: 92%;
 }
 
-/* Hero CTAs â€” stacked bordered rows, like the approved mockup */
+/* Hero CTAs — grilla 2x2 compacta y sobria en desktop, apilada en mobile */
 .hero-ctas {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
   max-width: 100%;
   animation: fadeInUp 0.8s ease 0.3s forwards;
   opacity: 0;
+}
+
+@media (min-width: 560px) {
+  .hero-ctas {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 14px;
+  }
 }
 
 .hero-ctas .cta-btn {
@@ -778,21 +757,22 @@ img {
   justify-content: space-between;
   text-align: left;
   width: 100%;
-  padding: 14px 20px;
+  padding: 11px 16px;
 }
 
 .cta-primary,
 .cta-secondary {
-  background-color: rgba(71, 151, 133, 0.08);
-  border-color: rgba(71, 151, 133, 0.4);
+  background-color: transparent;
+  border: 1px solid rgba(236, 228, 213, 0.16);
   color: var(--wb-cream);
-  border-radius: 8px;
+  border-radius: 6px;
+  font-size: 0.88rem;
 }
 
 .cta-primary:hover,
 .cta-secondary:hover {
-  background-color: rgba(71, 151, 133, 0.18);
-  border-color: var(--color-accent);
+  background-color: rgba(71, 151, 133, 0.1);
+  border-color: rgba(71, 151, 133, 0.5);
   color: var(--wb-cream);
 }
 
@@ -800,6 +780,7 @@ img {
   content: '\2192';
   color: var(--wb-green-2);
   margin-left: 12px;
+  font-size: 0.85rem;
   transition: transform var(--transition-fast);
 }
 
@@ -807,13 +788,15 @@ img {
   transform: translateX(3px);
 }
 
-/* ==================== Hero decorative graphic ==================== */
+/* ==================== Hero: fondo abstracto sutil ==================== */
+/* Grilla tenue + línea de mercado suave + barras discretas, sin cards
+   flotantes ni overlays — solo un fondo ambiental detrás del texto. */
 .hero-visual {
   position: relative;
   flex: 1 1 380px;
   min-width: 0;
-  max-width: 460px;
-  height: 340px;
+  max-width: 520px;
+  height: 320px;
   display: none;
 }
 
@@ -822,185 +805,12 @@ img {
   inset: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.85;
-}
-
-.hero-visual-card {
-  position: absolute;
-  background: rgba(20, 26, 23, 0.7);
-  border: 1px solid var(--color-border);
-  border-radius: 10px;
-  padding: 12px 16px;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  font-family: var(--font-display);
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  min-width: 150px;
-}
-
-.hero-visual-card--top {
-  top: 0;
-  right: 0;
-}
-
-.hero-visual-card--bottom {
-  bottom: 10px;
-  left: 0;
-}
-
-.hero-visual-label {
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-  color: var(--wb-gray);
-  text-transform: uppercase;
-}
-
-.hero-visual-value {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--wb-cream);
-}
-
-.hero-visual-delta--up {
-  font-size: 0.82rem;
-  color: var(--wb-green-2);
-}
-
-.hero-visual-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  font-family: var(--font-family);
-  font-size: 0.82rem;
-  color: var(--color-text);
-}
-
-.hero-visual-metric {
-  font-family: var(--font-display);
-  font-weight: 600;
-  color: var(--wb-green-2);
 }
 
 @media (min-width: 900px) {
   .hero-visual {
     display: block;
   }
-}
-
-/* ==================== Inversión: intro + mockup de app ==================== */
-.inversion-intro {
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
-  gap: 2.4rem;
-  margin-bottom: var(--spacing-2xl);
-}
-
-.inversion-intro .section-header {
-  margin-bottom: 0;
-}
-
-@media (min-width: 900px) {
-  .inversion-intro {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 3rem;
-  }
-
-  .inversion-intro .section-header {
-    flex: 1 1 auto;
-  }
-}
-
-/* Tarjeta ilustrativa de la app (cuenta demo, sin datos reales) */
-.app-mockup {
-  position: relative;
-  flex: 0 0 auto;
-  width: 100%;
-  max-width: 280px;
-  background: rgba(255, 255, 255, 0.75);
-  border: 1px solid rgba(20, 20, 15, 0.1);
-  border-radius: 16px;
-  padding: 20px 22px 18px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  box-shadow: 0 20px 48px -20px rgba(13, 15, 14, 0.28);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-}
-
-.app-mockup-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.app-mockup-label {
-  font-size: 0.62rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--wb-ink-muted);
-}
-
-.app-mockup-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--wb-green);
-}
-
-.app-mockup-balance {
-  font-family: var(--font-display);
-  font-size: 1.7rem;
-  font-weight: 700;
-  color: var(--wb-ink);
-  line-height: 1;
-}
-
-.app-mockup-delta {
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--wb-green);
-  margin-top: -4px;
-}
-
-.app-mockup-chart {
-  display: block;
-  width: 100%;
-  height: 44px;
-  margin: 6px 0 4px;
-}
-
-.app-mockup-rows {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding-top: 10px;
-  border-top: 1px solid rgba(20, 20, 15, 0.08);
-}
-
-.app-mockup-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 0.78rem;
-  color: var(--wb-ink-muted);
-}
-
-.app-mockup-row-up {
-  font-family: var(--font-display);
-  font-weight: 600;
-  color: var(--wb-green);
-}
-
-.app-mockup-row-down {
-  font-family: var(--font-display);
-  font-weight: 600;
-  color: var(--wb-negative);
 }
 
 /* ==================== Process Steps ==================== */
@@ -1039,7 +849,7 @@ img {
 .inversor-tooltip {
   display: none;
   position: fixed; /* fixed escapa cualquier overflow del padre */
-  background: #181818;
+  background: var(--wb-carbon-soft);
   border: 1px solid var(--color-border-accent);
   border-radius: 10px;
   padding: 16px 20px;
@@ -1105,9 +915,10 @@ img {
   -webkit-backdrop-filter: blur(6px);
 }
 
-/* Índice numerado tipo "01/02/03" en la esquina de cada card, apenas
-   visible — puramente decorativo, generado con CSS counters (no toca
-   el texto ni el HTML de cada paso). */
+/* Índice numerado tipo "— 01 / — 02" en la esquina inferior derecha de
+   cada card, inspirado en la numeración de página del reporte mensual de
+   inversor — apenas visible, puramente decorativo, generado con CSS
+   counters (no toca el texto ni el HTML de cada paso). */
 .steps-grid {
   counter-reset: wb-step;
 }
@@ -1126,23 +937,34 @@ img {
 
 .steps-grid .step-card::after,
 .transparency-grid .transparency-item::after {
-  content: counter(wb-step, decimal-leading-zero);
+  content: '\2014 ' counter(wb-step, decimal-leading-zero);
   position: absolute;
-  top: 16px;
-  right: 22px;
+  bottom: 14px;
+  right: 18px;
+  top: auto;
   font-family: var(--font-display);
-  font-size: 2.1rem;
-  font-weight: 700;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
   line-height: 1;
-  color: var(--wb-green-2);
-  opacity: 0.22;
+  color: var(--wb-cream);
+  opacity: 0.3;
   pointer-events: none;
   z-index: 0;
 }
 
-.section-cream .steps-grid .step-card::after {
+.section-cream .steps-grid .step-card::after,
+.section-cream .transparency-grid .transparency-item::after {
   color: var(--wb-green);
-  opacity: 0.18;
+  opacity: 0.32;
+}
+
+/* Íconos en fondo oscuro (p. ej. Inversión): tono crema apagado, no verde
+   brillante — el verde saturado queda reservado para fondo crema. */
+.section-dark .step-icon {
+  border-color: rgba(236, 228, 213, 0.18);
+  background-color: rgba(236, 228, 213, 0.05);
+  color: rgba(236, 228, 213, 0.62);
 }
 
 .step-icon {
@@ -1325,6 +1147,38 @@ img {
   margin-top: var(--spacing-md);
 }
 
+/* Transparencia ahora vive en el ambiente crema — misma familia visual
+   que Proceso: cards claras, ícono verde, texto en tinta oscura. */
+.section-cream .transparency-item {
+  background-color: rgba(255, 255, 255, 0.55);
+  border-color: var(--wb-ink-border);
+  border-left-color: var(--wb-green);
+}
+
+.section-cream .transparency-item:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-color: rgba(57, 131, 109, 0.35);
+  border-left-color: var(--wb-green);
+}
+
+.section-cream .transparency-item .step-icon {
+  border-color: rgba(57, 131, 109, 0.4);
+  background-color: rgba(57, 131, 109, 0.08);
+  color: var(--wb-green);
+}
+
+.section-cream .transparency-item-title {
+  color: var(--wb-ink);
+}
+
+.section-cream .transparency-item-desc {
+  color: var(--wb-ink-muted);
+}
+
+.section-cream .transparency-closing {
+  color: var(--wb-ink-muted);
+}
+
 /* ==================== Resultados HistÃ³ricos ==================== */
 
 /* Panel resumen decorativo, con las cifras ya aprobadas en la guÃ­a de
@@ -1337,16 +1191,65 @@ img {
   padding: 28px clamp(20px, 4vw, 48px) 22px;
   border: 1px solid rgba(236, 228, 213, 0.1);
   border-radius: 12px;
-  background: linear-gradient(180deg, rgba(71, 151, 133, 0.07) 0%, rgba(71, 151, 133, 0.02) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(71, 151, 133, 0.07) 0%,
+    rgba(71, 151, 133, 0.02) 100%
+  );
   overflow: hidden;
+}
+
+.results-chart-wrap {
+  position: relative;
+  margin-bottom: 18px;
 }
 
 .results-summary-chart {
   display: block;
   width: 100%;
   height: 64px;
-  margin-bottom: 18px;
+  opacity: 0.7;
+  overflow: visible;
+}
+
+.results-chart-point {
+  fill: var(--wb-carbon);
+  stroke: var(--wb-green-2);
+  stroke-width: 1.5;
   opacity: 0.55;
+  cursor: pointer;
+  transition:
+    opacity var(--transition-fast),
+    r var(--transition-fast);
+}
+
+.results-chart-point:hover,
+.results-chart-point:focus,
+.results-chart-point.active {
+  opacity: 1;
+  r: 5.5;
+  outline: none;
+}
+
+.results-chart-tooltip {
+  position: absolute;
+  transform: translate(-50%, -130%);
+  background: var(--wb-carbon);
+  border: 1px solid rgba(71, 151, 133, 0.4);
+  color: var(--wb-cream);
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  padding: 4px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+  z-index: 2;
+}
+
+.results-chart-tooltip.visible {
+  opacity: 1;
 }
 
 .results-summary-stats {
@@ -1461,7 +1364,7 @@ img {
 .result-card:hover .result-pct,
 .result-card:hover .pct-sign,
 .result-card:hover .result-year {
-  color: var(--color-accent);
+  color: var(--wb-cream);
 }
 
 .result-year {
@@ -1604,16 +1507,6 @@ img {
   position: relative;
 }
 
-#contacto::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(circle at 20% 18%, rgba(71, 151, 133, 0.12), transparent 45%),
-    radial-gradient(circle at 82% 70%, rgba(71, 151, 133, 0.08), transparent 42%);
-}
-
 #contacto .section-header {
   margin-bottom: clamp(2rem, 4vw, 3rem);
 }
@@ -1621,7 +1514,6 @@ img {
 #contacto .section-title {
   font-size: clamp(2.8rem, 5.3vw, 4.2rem);
   letter-spacing: 0.06em;
-  text-shadow: 0 0 24px rgba(71, 151, 133, 0.2);
 }
 
 #contacto .section-title::after {
@@ -1652,61 +1544,37 @@ img {
   align-items: center;
   gap: 1rem;
   padding: clamp(1rem, 2.5vw, 1.35rem);
-  min-height: 132px;
-  background: linear-gradient(145deg, rgba(20, 26, 23, 0.75), rgba(13, 15, 14, 0.85));
-  border: 1px solid rgba(71, 151, 133, 0.25);
-  border-radius: 14px;
+  min-height: 104px;
+  background: transparent;
+  border: 1px solid rgba(236, 228, 213, 0.14);
+  border-radius: 8px;
   position: relative;
-  overflow: hidden;
   transition:
-    transform var(--transition-base),
     border-color var(--transition-base),
-    box-shadow var(--transition-base),
     background-color var(--transition-base);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
 }
 
 .contact-item:hover {
-  transform: translateY(-3px);
-  border-color: rgba(71, 151, 133, 0.5);
-  box-shadow:
-    0 12px 30px rgba(0, 0, 0, 0.45),
-    0 0 0 1px rgba(71, 151, 133, 0.18),
-    0 0 26px rgba(71, 151, 133, 0.13);
-}
-
-.contact-item::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: linear-gradient(
-    135deg,
-    rgba(71, 151, 133, 0.1) 0%,
-    rgba(71, 151, 133, 0.03) 35%,
-    rgba(255, 255, 255, 0) 70%
-  );
-  opacity: 0.9;
+  border-color: rgba(71, 151, 133, 0.4);
+  background-color: rgba(71, 151, 133, 0.04);
 }
 
 .contact-icon {
   flex-shrink: 0;
   width: 50px;
   height: 50px;
-  border-radius: 12px;
+  border-radius: 50%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-accent);
+  color: var(--wb-green-2);
   border: 1px solid rgba(71, 151, 133, 0.4);
-  background: rgba(71, 151, 133, 0.1);
-  box-shadow: inset 0 0 12px rgba(71, 151, 133, 0.12);
+  background: transparent;
 }
 
 .contact-icon svg {
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
 }
 
 .contact-copy {
@@ -1714,23 +1582,21 @@ img {
   flex-direction: column;
   gap: 0.3rem;
   min-width: 0;
-  position: relative;
-  z-index: 1;
 }
 
 .contact-label {
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   text-transform: uppercase;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.08em;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.58);
+  color: rgba(236, 228, 213, 0.5);
 }
 
 .contact-value {
   font-size: clamp(0.98rem, 1.6vw, 1.08rem);
   font-weight: 600;
   letter-spacing: 0.01em;
-  color: rgba(232, 232, 232, 0.96);
+  color: var(--wb-cream);
   word-break: break-word;
 }
 
@@ -1823,30 +1689,6 @@ img {
 .disclaimer {
   font-size: 0.75rem;
   color: var(--color-text-dim);
-}
-
-/* ==================== Parallax Window (hero â†’ Proceso transition) ==================== */
-.parallax-window-wrap {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  z-index: 10;
-  margin-top: -3rem;
-  margin-bottom: -3rem;
-}
-
-.parallax-window {
-  width: 300px;
-  height: 200px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  /* Image sits behind the frame as a background */
-  background-image: url('assets/hero-bg-1.png');
-  background-size: 200%;
-  background-repeat: no-repeat;
-  background-position: center 30%;
-  /* JS will update background-position-y on scroll */
-  will-change: background-position;
 }
 
 /* ==================== Animations ==================== */
@@ -2023,12 +1865,6 @@ body.menu-open .header {
     margin-bottom: 1.5rem;
   }
 
-  .hero-logo {
-    height: 80px; /* Reducir aún mas el logo */
-    margin-top: 0.4rem;
-    margin-bottom: 2rem;
-  }
-
   .hero-title-line1 {
     font-size: 1.55rem; /* Tamaño más proporcionado */
     line-height: 1.25;
@@ -2152,27 +1988,6 @@ body.menu-open .header {
     gap: 16px;
   }
 
-  /* 5. FONDOS (IMPORTANTE) */
-  body::before {
-    opacity: 0.35; /* Mayor visibilidad */
-    background-position: center;
-  }
-
-  .hero::before {
-    background:
-      linear-gradient(
-        to right,
-        rgba(13, 15, 14, 0.55) 0%,
-        /* Overlays suavizados */ rgba(13, 15, 14, 0.25) 100%
-      ),
-      linear-gradient(to bottom, rgba(13, 15, 14, 0.1) 0%, rgba(13, 15, 14, 0.45) 100%);
-  }
-
-  .hero::after {
-    background-position: 70% center;
-    opacity: 0.75; /* Background principal resalta un poco más */
-  }
-
   /* 6. CONTACTO Y FOOTER */
   .contact-item {
     min-height: 118px;
@@ -2190,14 +2005,14 @@ body.menu-open .header {
   }
 
   .contact-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
   }
 
   .contact-icon svg {
-    width: 21px;
-    height: 21px;
+    width: 22px;
+    height: 22px;
   }
 
   .contact-label {
@@ -2289,12 +2104,10 @@ body.menu-open .header {
   }
 }
 
-/* ==================== Parallax Window: Hero â†’ Proceso ==================== */
-/*
-   El recuadro actua como una ventana que muestra hero-bg-1
-   fija detras de la landing (parallax via background-attachment: fixed).
-   Al scrollear, la imagen se mueve a distinta velocidad que el contenido.
-*/
+/* Franja de transición Hero → Proceso. La imagen actual (hero-bg-1.png) es
+   un placeholder provisorio a pedido — Federico va a retocarla / rehacerla
+   con IA; cuando esté lista alcanza con reemplazar el background-image de
+   abajo, no hace falta tocar el HTML ni el resto del CSS. */
 .expand-reveal {
   width: 100%;
   overflow: hidden;

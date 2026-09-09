@@ -317,7 +317,80 @@ document.addEventListener('DOMContentLoaded', () => {
     countUpEls.forEach((el) => countObserver.observe(el));
   }
 
-  // ---- Parallax window: hero → Proceso transition ----
-  // The parallax effect is handled purely by CSS (background-attachment: fixed).
-  // No JS needed for this element.
+  // ---- Resultados: gráfico mensual interactivo ----
+  // MOCK — reemplazar por datos reales de la operatoria cuando estén
+  // disponibles. Cambiar solo este array: el polyline y los puntos del
+  // gráfico se regeneran automáticamente a partir de él.
+  const MOCK_MONTHLY_RETURNS = [
+    { month: 'Ago 25', value: 1.8 },
+    { month: 'Sep 25', value: 2.4 },
+    { month: 'Oct 25', value: 1.2 },
+    { month: 'Nov 25', value: 2.9 },
+    { month: 'Dic 25', value: 1.6 },
+    { month: 'Ene 26', value: 2.1 },
+    { month: 'Feb 26', value: 3.0 },
+    { month: 'Mar 26', value: 1.4 },
+    { month: 'Abr 26', value: 2.6 },
+    { month: 'May 26', value: 1.9 },
+    { month: 'Jun 26', value: 2.3 },
+    { month: 'Jul 26', value: 2.0 },
+  ];
+
+  const chartSvg = document.getElementById('results-chart-svg');
+  const chartLine = document.getElementById('results-chart-line');
+  const chartTooltip = document.getElementById('results-chart-tooltip');
+  const chartWrap = document.getElementById('results-chart');
+
+  if (chartSvg && chartLine && chartTooltip && chartWrap) {
+    const W = 600;
+    const H = 120;
+    const PAD_X = 10;
+    const PAD_Y = 10;
+    const values = MOCK_MONTHLY_RETURNS.map((d) => d.value);
+    const vMin = Math.min(...values) - 0.5;
+    const vMax = Math.max(...values) + 0.5;
+    const n = MOCK_MONTHLY_RETURNS.length;
+
+    const coords = MOCK_MONTHLY_RETURNS.map((d, i) => {
+      const x = PAD_X + (i * (W - 2 * PAD_X)) / (n - 1);
+      const y = PAD_Y + ((vMax - d.value) / (vMax - vMin)) * (H - 2 * PAD_Y);
+      return { ...d, x, y };
+    });
+
+    chartLine.setAttribute(
+      'points',
+      coords.map((c) => `${c.x.toFixed(1)},${c.y.toFixed(1)}`).join(' '),
+    );
+
+    const svgNS = 'http://www.w3.org/2000/svg';
+    coords.forEach((c) => {
+      const circle = document.createElementNS(svgNS, 'circle');
+      circle.setAttribute('cx', c.x.toFixed(1));
+      circle.setAttribute('cy', c.y.toFixed(1));
+      circle.setAttribute('r', '4');
+      circle.setAttribute('class', 'results-chart-point');
+      circle.setAttribute('tabindex', '0');
+      circle.setAttribute('role', 'img');
+      circle.setAttribute('aria-label', `${c.month}: +${c.value.toFixed(1).replace('.', ',')}%`);
+
+      const showTooltip = () => {
+        chartTooltip.textContent = `${c.month} · +${c.value.toFixed(1).replace('.', ',')}%`;
+        chartTooltip.style.left = `${(c.x / W) * 100}%`;
+        chartTooltip.style.top = `${(c.y / H) * 100}%`;
+        chartTooltip.classList.add('visible');
+        circle.classList.add('active');
+      };
+      const hideTooltip = () => {
+        chartTooltip.classList.remove('visible');
+        circle.classList.remove('active');
+      };
+
+      circle.addEventListener('mouseenter', showTooltip);
+      circle.addEventListener('mouseleave', hideTooltip);
+      circle.addEventListener('focus', showTooltip);
+      circle.addEventListener('blur', hideTooltip);
+
+      chartSvg.appendChild(circle);
+    });
+  }
 });

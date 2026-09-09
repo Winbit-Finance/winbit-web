@@ -7,14 +7,17 @@
       name="description"
       content="Winbit - Gestión patrimonial privada mediante contratos de futuros. Trading de futuros institucional."
     />
-    <title>Winbit · Trading de Futuros</title>
+    <title>Winbit · Gestión Activa en USD</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Condensed:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=2" />
+    <link rel="stylesheet" href="styles.css?v=3" />
   </head>
 
   <body>
@@ -23,7 +26,7 @@
       <div class="header-container">
         <div class="header-left">
           <a href="#winbit" class="logo-link">
-            <img src="assets/logo-winbit-2026.png" alt="Winbit Logo" class="logo-img" />
+            <img src="assets/logo-winbit-2026-nav.png" alt="Winbit Logo" class="logo-img" />
           </a>
           <a href="https://app.winbit.com.ar/" class="header-investor-link" data-i18n="ctaAcceso"
             >Acceso inversores</a
@@ -76,75 +79,81 @@
         <div class="container">
           <div class="hero-content">
             <div class="hero-text">
-              <div class="hero-body">
-                <h1 class="hero-title" data-i18n="heroTitle">
-                  <span class="hero-title-line1">GESTIÓN DE CAPITAL PRIVADO</span>
-                  <span class="hero-title-line2">EN MERCADOS FINANCIEROS INTERNACIONALES</span>
-                </h1>
-                <p class="hero-subtitle" data-i18n="heroSubtitle">
-                  Operamos diariamente en el mercado de futuros del CME (Chicago Mercantile
-                  Exchange), priorizando el control del riesgo y la generación de resultados
-                  consistentes.
-                </p>
-              </div>
-              <div class="hero-ctas">
-                <a href="#proceso" class="cta-btn cta-secondary" data-i18n="ctaProceso"
-                  >Conocer el proceso</a
-                >
-                <a href="#inversion" class="cta-btn cta-primary" data-i18n="ctaInvertir"
-                  >Cómo invertir</a
-                >
-                <a href="#transparencia" class="cta-btn cta-secondary" data-i18n="ctaTransparencia"
-                  >Relación con el inversor</a
-                >
-                <a href="#resultados" class="cta-btn cta-secondary" data-i18n="ctaResultados"
-                  >Estadística operativa</a
-                >
-              </div>
+            <div class="hero-body">
+              <img
+                src="assets/logo-winbit-2026-hero.png"
+                alt=""
+                class="hero-logo"
+                aria-hidden="true"
+              />
+              <h1 class="hero-title" data-i18n="heroTitle">
+                <span class="hero-title-line1">GESTIÓN DE CAPITAL PRIVADO</span>
+                <span class="hero-title-line2">EN MERCADOS FINANCIEROS INTERNACIONALES</span>
+              </h1>
+              <p class="hero-subtitle" data-i18n="heroSubtitle">
+                Operamos diariamente en el mercado de futuros del CME (Chicago Mercantile Exchange),
+                priorizando el control del riesgo y la generación de resultados consistentes.
+              </p>
+            </div>
+            <div class="hero-ctas">
+              <a href="#proceso" class="cta-btn cta-secondary" data-i18n="ctaProceso"
+                >Conocer el proceso</a
+              >
+              <a href="#inversion" class="cta-btn cta-primary" data-i18n="ctaInvertir"
+                >Cómo invertir</a
+              >
+              <a href="#transparencia" class="cta-btn cta-secondary" data-i18n="ctaTransparencia"
+                >Relación con el inversor</a
+              >
+              <a href="#resultados" class="cta-btn cta-secondary" data-i18n="ctaResultados"
+                >Estadística operativa</a
+              >
+            </div>
             </div>
 
-            <!-- Decorative market graphic (illustrative only, no real data) -->
-            <div class="hero-visual" aria-hidden="true">
-              <div class="hero-visual-card hero-visual-card--top">
-                <span class="hero-visual-label">NQ SEP25</span>
-                <span class="hero-visual-value">19.842,25</span>
-                <span class="hero-visual-delta hero-visual-delta--up">+0,68%</span>
-              </div>
-              <svg
-                class="hero-visual-chart"
-                viewBox="0 0 400 160"
-                preserveAspectRatio="none"
-                fill="none"
-              >
-                <polyline
-                  points="0,120 30,110 55,125 80,95 105,105 130,80 155,90 180,60 205,70 230,45 255,55 280,30 305,40 330,18 355,28 380,10 400,15"
-                  stroke="url(#heroLineGrad)"
-                  stroke-width="2.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <defs>
-                  <linearGradient id="heroLineGrad" x1="0" y1="0" x2="400" y2="0">
-                    <stop offset="0%" stop-color="#479785" stop-opacity="0.35" />
-                    <stop offset="100%" stop-color="#479785" stop-opacity="1" />
-                  </linearGradient>
-                </defs>
-              </svg>
-              <div class="hero-visual-card hero-visual-card--bottom">
-                <span class="hero-visual-label">RISK CONTROL</span>
-                <div class="hero-visual-row">
-                  <span>Exposición</span><span class="hero-visual-metric">34%</span>
-                </div>
-                <div class="hero-visual-row">
-                  <span>Drawdown</span><span class="hero-visual-metric">-2,1%</span>
-                </div>
-              </div>
-            </div>
+          <!-- Gráfico de fondo, abstracto y sobrio (ilustrativo, sin datos reales) -->
+          <div class="hero-visual" aria-hidden="true">
+            <svg
+              class="hero-visual-chart"
+              viewBox="0 0 400 320"
+              preserveAspectRatio="none"
+              fill="none"
+            >
+              <g stroke="#ece4d5" stroke-opacity="0.06" stroke-width="1">
+                <line x1="0" y1="40" x2="400" y2="40" />
+                <line x1="0" y1="110" x2="400" y2="110" />
+                <line x1="0" y1="180" x2="400" y2="180" />
+                <line x1="0" y1="250" x2="400" y2="250" />
+              </g>
+              <g stroke="#479785" stroke-opacity="0.12" stroke-width="1">
+                <rect x="24" y="205" width="5" height="30" />
+                <rect x="60" y="190" width="5" height="45" />
+                <rect x="96" y="175" width="5" height="60" />
+                <rect x="132" y="195" width="5" height="40" />
+                <rect x="168" y="160" width="5" height="75" />
+                <rect x="204" y="150" width="5" height="85" />
+                <rect x="240" y="170" width="5" height="65" />
+                <rect x="276" y="130" width="5" height="105" />
+                <rect x="312" y="145" width="5" height="90" />
+                <rect x="348" y="115" width="5" height="120" />
+              </g>
+              <polyline
+                points="0,220 40,205 80,210 120,175 160,185 200,140 240,150 280,105 320,120 360,80 400,95"
+                stroke="#479785"
+                stroke-opacity="0.4"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
           </div>
         </div>
       </section>
 
-      <!-- Expanding reveal: transition hero → Proceso -->
+      <!-- Expanding reveal: transición hero → Proceso (imagen placeholder,
+           pendiente de retoque de diseño — se reemplaza fácil cambiando
+           el background-image de .expand-reveal-inner en styles.css) -->
       <div class="expand-reveal" id="expand-reveal">
         <div class="expand-reveal-inner"></div>
       </div>
@@ -161,278 +170,131 @@
           </header>
           <div class="steps-grid">
             <div class="step-card">
-              <span class="step-icon" aria-hidden="true"
-                ><svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <polyline points="3 17 9 11 13 15 21 6" />
-                  <polyline points="14 6 21 6 21 13" /></svg
-              ></span>
+              <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 17 9 11 13 15 21 6"/><polyline points="14 6 21 6 21 13"/></svg></span>
               <div class="step-body">
-                <h3 class="step-title step-title-accent">Generación de rendimientos</h3>
-                <p class="step-desc">
-                  Winbit opera contratos de futuros en mercados internacionales con el objetivo de
-                  generar rendimientos en USD sobre el capital administrado. La operatoria se basa
-                  en una estrategia previamente definida, aplicada bajo criterios técnicos y
-                  enfocada en lograr consistencia en los resultados a lo largo del tiempo.
-                </p>
-              </div>
+              <h3 class="step-title step-title-accent">Generación de rendimientos</h3>
+              <p class="step-desc">
+                Winbit opera contratos de futuros en mercados internacionales con el objetivo de
+                generar rendimientos en USD sobre el capital administrado. La operatoria se basa en
+                una estrategia previamente definida, aplicada bajo criterios técnicos y enfocada en
+                lograr consistencia en los resultados a lo largo del tiempo.
+              </p>
+            </div>
             </div>
             <div class="step-card">
-              <span class="step-icon" aria-hidden="true"
-                ><svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" />
-                  <polyline points="9 12 11.5 14.5 15.5 10" /></svg
-              ></span>
+              <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><polyline points="9 12 11.5 14.5 15.5 10"/></svg></span>
               <div class="step-body">
-                <h3 class="step-title step-title-accent">Gestión del capital</h3>
-                <p class="step-desc">
-                  El inversor aporta capital a su cuenta personal de Winbit y nuestro equipo lo
-                  integra a la operatoria diaria. La gestión se realiza bajo una estrategia con
-                  evidencia estadística positiva, orientada al crecimiento sostenido en un marco de
-                  control del riesgo.
-                </p>
-              </div>
+              <h3 class="step-title step-title-accent">Gestión del capital</h3>
+              <p class="step-desc">
+                El inversor aporta capital a su cuenta personal de Winbit y nuestro equipo lo
+                integra a la operatoria diaria. La gestión se realiza bajo una estrategia con
+                evidencia estadística positiva, orientada al crecimiento sostenido en un marco de
+                control del riesgo.
+              </p>
+            </div>
             </div>
             <div class="step-card">
-              <span class="step-icon" aria-hidden="true"
-                ><svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <circle cx="12" cy="12" r="8.5" />
-                  <polyline points="12 8 12 12 15 14" /></svg
-              ></span>
+              <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><polyline points="12 8 12 12 15 14"/></svg></span>
               <div class="step-body">
-                <h3 class="step-title step-title-accent">Disponibilidad de la inversión</h3>
-                <p class="step-desc">
-                  El capital administrado permanece disponible para el inversor en todo momento. La
-                  estructura permite solicitar retiros sin períodos de permanencia obligatorios,
-                  manteniendo liquidez mientras el dinero continúa siendo gestionado dentro de la
-                  estrategia operativa.
-                </p>
-              </div>
+              <h3 class="step-title step-title-accent">Disponibilidad de la inversión</h3>
+              <p class="step-desc">
+                El capital administrado permanece disponible para el inversor en todo momento. La
+                estructura permite solicitar retiros sin períodos de permanencia obligatorios,
+                manteniendo liquidez mientras el dinero continúa siendo gestionado dentro de la
+                estrategia operativa.
+              </p>
+            </div>
             </div>
             <div class="step-card">
-              <span class="step-icon" aria-hidden="true"
-                ><svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <rect x="4" y="12" width="3" height="7" />
-                  <rect x="10.5" y="7" width="3" height="12" />
-                  <rect x="17" y="3" width="3" height="16" /></svg
-              ></span>
+              <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="12" width="3" height="7"/><rect x="10.5" y="7" width="3" height="12"/><rect x="17" y="3" width="3" height="16"/></svg></span>
               <div class="step-body">
-                <h3 class="step-title step-title-accent">Seguimiento de resultados</h3>
-                <p class="step-desc">
-                  Cada usuario puede visualizar la evolución de su inversión desde la plataforma,
-                  con actualizaciones periódicas basadas en los resultados de la operatoria. Esto
-                  permite un seguimiento claro y continuo del desempeño.
-                </p>
-              </div>
+              <h3 class="step-title step-title-accent">Seguimiento de resultados</h3>
+              <p class="step-desc">
+                Cada usuario puede visualizar la evolución de su inversión desde la plataforma, con
+                actualizaciones periódicas basadas en los resultados de la operatoria. Esto permite
+                un seguimiento claro y continuo del desempeño.
+              </p>
+            </div>
             </div>
           </div>
         </div>
       </section>
 
       <!-- Section 3: Inversión -->
-      <section class="section section-cream" id="inversion">
+      <section class="section section-dark" id="inversion">
         <div class="container">
-          <div class="inversion-intro">
-            <!-- Mockup ilustrativo de la app, con cuenta demo (sin datos reales de clientes) -->
-            <div class="app-mockup" aria-hidden="true">
-              <div class="app-mockup-top">
-                <span class="app-mockup-label">PORTAFOLIO · CUENTA DEMO</span>
-                <span class="app-mockup-dot"></span>
-              </div>
-              <span class="app-mockup-balance">USD 12.480</span>
-              <span class="app-mockup-delta">+2,1&nbsp;% este mes</span>
-              <svg
-                class="app-mockup-chart"
-                viewBox="0 0 220 56"
-                preserveAspectRatio="none"
-                fill="none"
-              >
-                <polyline
-                  points="0,46 20,42 40,44 60,34 80,36 100,24 120,28 140,16 160,20 180,8 200,12 220,4"
-                  stroke="#39836d"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-              <div class="app-mockup-rows">
-                <div class="app-mockup-row">
-                  <span>Movimiento diario</span><span class="app-mockup-row-up">+0,34&nbsp;%</span>
-                </div>
-                <div class="app-mockup-row">
-                  <span>Movimiento diario</span><span class="app-mockup-row-up">+0,18&nbsp;%</span>
-                </div>
-                <div class="app-mockup-row">
-                  <span>Movimiento diario</span
-                  ><span class="app-mockup-row-down">-0,05&nbsp;%</span>
-                </div>
-              </div>
-            </div>
-            <header class="section-header header-right">
-              <h2 class="section-title" data-i18n="inversionTitle">INVERSIÓN</h2>
-              <p class="section-subtitle section-subtitle-italic">
-                Estructura diseñada para permitir flexibilidad y acceso permanente al capital.
-              </p>
-            </header>
-          </div>
+          <header class="section-header header-right">
+            <h2 class="section-title" data-i18n="inversionTitle">INVERSIÓN</h2>
+            <p class="section-subtitle section-subtitle-italic">
+              Estructura diseñada para permitir flexibilidad y acceso permanente al capital.
+            </p>
+          </header>
           <div class="steps-grid">
             <div class="step-card">
-              <span class="step-icon" aria-hidden="true"
-                ><svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M3 10l9-6 9 6" />
-                  <path d="M4 10v9" />
-                  <path d="M20 10v9" />
-                  <path d="M8 10v9" />
-                  <path d="M16 10v9" />
-                  <path d="M2 21h20" /></svg
-              ></span>
+              <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-6 9 6"/><path d="M4 10v9"/><path d="M20 10v9"/><path d="M8 10v9"/><path d="M16 10v9"/><path d="M2 21h20"/></svg></span>
               <div class="step-body">
-                <h3 class="step-title step-title-accent">Ingreso de capital</h3>
-                <p class="step-desc">
-                  El capital puede ingresarse en ARS, USD, USDT o mediante transferencias bancarias
-                  internacionales bajo estándares SWIFT e IBAN. Todos los aportes son acreditados
-                  bajo denominación en USD dentro de la estructura operativa.
-                </p>
-              </div>
+              <h3 class="step-title step-title-accent">Ingreso de capital</h3>
+              <p class="step-desc">
+                El capital puede ingresarse en ARS, USD, USDT o mediante transferencias bancarias
+                internacionales bajo estándares SWIFT e IBAN. Todos los aportes son acreditados bajo
+                denominación en USD dentro de la estructura operativa.
+              </p>
+            </div>
             </div>
             <div class="step-card">
-              <span class="step-icon" aria-hidden="true"
-                ><svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <rect x="3" y="4" width="18" height="12" rx="2" />
-                  <path d="M8 20h8" />
-                  <path d="M12 16v4" /></svg
-              ></span>
+              <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8"/><path d="M12 16v4"/></svg></span>
               <div class="step-body">
-                <h3 class="step-title step-title-accent">Acceso y monitoreo</h3>
-                <p class="step-desc">
-                  Cada inversor dispone de una aplicación personal con actualización diaria del
-                  saldo al cierre del mercado de futuros norteamericano (18:00 UTC-3). El capital
-                  administrado se visualiza en USD y la información refleja el resultado consolidado
-                  de la operatoria diaria.
-                </p>
-              </div>
+              <h3 class="step-title step-title-accent">Acceso y monitoreo</h3>
+              <p class="step-desc">
+                Cada inversor dispone de una aplicación personal con actualización diaria del saldo
+                al cierre del mercado de futuros norteamericano (18:00 UTC-3). El capital
+                administrado se visualiza en USD y la información refleja el resultado consolidado
+                de la operatoria diaria.
+              </p>
+            </div>
             </div>
             <div class="step-card">
-              <span class="step-icon" aria-hidden="true"
-                ><svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path
-                    d="M3 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"
-                  />
-                  <path d="M16 12h3" /></svg
-              ></span>
+              <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/><path d="M16 12h3"/></svg></span>
               <div class="step-body">
-                <h3 class="step-title step-title-accent">Liquidez y retiros</h3>
-                <p class="step-desc">
-                  Los ingresos y retiros pueden solicitarse sin restricciones contractuales de
-                  permanencia. Las solicitudes se procesan habitualmente dentro de las 24 horas
-                  hábiles, con confirmación documental de la operación.
-                </p>
-              </div>
+              <h3 class="step-title step-title-accent">Liquidez y retiros</h3>
+              <p class="step-desc">
+                Los ingresos y retiros pueden solicitarse sin restricciones contractuales de
+                permanencia. Las solicitudes se procesan habitualmente dentro de las 24 horas
+                hábiles, con confirmación documental de la operación.
+              </p>
+            </div>
             </div>
             <div class="step-card">
-              <span class="step-icon" aria-hidden="true"
-                ><svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M6 3h8l5 5v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" />
-                  <path d="M14 3v5h5" />
-                  <path d="M8.5 16l1.8-1.8 1.8 1.8" />
-                  <path d="M9 19h6" /></svg
-              ></span>
+              <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l5 5v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v5h5"/><path d="M8.5 16l1.8-1.8 1.8 1.8"/><path d="M9 19h6"/></svg></span>
               <div class="step-body">
-                <h3 class="step-title step-title-accent">Relación contractual</h3>
-                <p class="step-desc">
-                  La relación se formaliza mediante un contrato digital entre las partes, con firma
-                  electrónica y respaldo jurídico-documental de cada operación.
-                </p>
-              </div>
+              <h3 class="step-title step-title-accent">Relación contractual</h3>
+              <p class="step-desc">
+                La relación se formaliza mediante un contrato digital entre las partes, con firma
+                electrónica y respaldo jurídico-documental de cada operación.
+              </p>
+            </div>
             </div>
           </div>
           <div class="comision-card">
             <div class="step-card">
-              <span class="step-icon" aria-hidden="true"
-                ><svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <line x1="19" y1="5" x2="5" y2="19" />
-                  <circle cx="6.5" cy="6.5" r="2.5" />
-                  <circle cx="17.5" cy="17.5" r="2.5" /></svg
-              ></span>
+              <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></span>
               <div class="step-body">
-                <h3 class="step-title step-title-accent">Comisión del servicio</h3>
-                <p class="step-desc">
-                  Se aplica una comisión del 30&nbsp;% sobre la rentabilidad generada en el período.
-                  La liquidación se realiza de forma trimestral. Aplicable a cuentas
-                  <span class="inversor-tooltip-trigger" id="inversor-trigger"
-                    >Inversor <span class="inversor-asterisk">(*)</span></span
-                  >.
-                </p>
-              </div>
+              <h3 class="step-title step-title-accent">Comisión del servicio</h3>
+              <p class="step-desc">
+                Se aplica una comisión del 30&nbsp;% sobre la rentabilidad generada en el período.
+                La liquidación se realiza de forma trimestral. Aplicable a cuentas
+                <span class="inversor-tooltip-trigger" id="inversor-trigger"
+                  >Inversor <span class="inversor-asterisk">(*)</span></span
+                >.
+              </p>
+            </div>
             </div>
           </div>
         </div>
       </section>
 
       <!-- Section 4: Transparencia -->
-      <section class="section section-dark" id="transparencia">
+      <section class="section section-cream" id="transparencia">
         <div class="container">
           <header class="section-header header-left">
             <h2 class="section-title" data-i18n="transparenciaTitle">TRANSPARENCIA</h2>
@@ -440,94 +302,46 @@
           <div class="transparency-content">
             <div class="transparency-grid">
               <div class="transparency-item">
-                <span class="step-icon" aria-hidden="true"
-                  ><svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.6"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <rect x="6" y="4" width="12" height="17" rx="2" />
-                    <path d="M9 3h6v3H9z" />
-                    <path d="M9 11h6" />
-                    <path d="M9 15h6" /></svg
-                ></span>
-                <div class="transparency-body">
-                  <h3 class="transparency-item-title">Registro operativo</h3>
-                  <p class="transparency-item-desc">
-                    Cada operación queda registrada con fecha, instrumento y resultado. El inversor
-                    tiene acceso al historial consolidado de la operatoria.
-                  </p>
-                </div>
+                <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 3h6v3H9z"/><path d="M9 11h6"/><path d="M9 15h6"/></svg></span>
+              <div class="transparency-body">
+              <h3 class="transparency-item-title">Registro operativo</h3>
+                <p class="transparency-item-desc">
+                  Cada operación queda registrada con fecha, instrumento y resultado. El inversor
+                  tiene acceso al historial consolidado de la operatoria.
+                </p>
               </div>
+            </div>
               <div class="transparency-item">
-                <span class="step-icon" aria-hidden="true"
-                  ><svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.6"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <rect x="4" y="12" width="3" height="7" />
-                    <rect x="10.5" y="7" width="3" height="12" />
-                    <rect x="17" y="3" width="3" height="16" /></svg
-                ></span>
-                <div class="transparency-body">
-                  <h3 class="transparency-item-title">Reportes periódicos</h3>
-                  <p class="transparency-item-desc">
-                    Se emiten reportes mensuales con el detalle del desempeño del período,
-                    disponibles para cada usuario dentro de la plataforma personal.
-                  </p>
-                </div>
+                <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="12" width="3" height="7"/><rect x="10.5" y="7" width="3" height="12"/><rect x="17" y="3" width="3" height="16"/></svg></span>
+              <div class="transparency-body">
+              <h3 class="transparency-item-title">Reportes periódicos</h3>
+                <p class="transparency-item-desc">
+                  Se emiten reportes mensuales con el detalle del desempeño del período, disponibles
+                  para cada usuario dentro de la plataforma personal.
+                </p>
               </div>
+            </div>
               <div class="transparency-item">
-                <span class="step-icon" aria-hidden="true"
-                  ><svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.6"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <rect x="3" y="5" width="18" height="14" rx="2" />
-                    <path d="M4 7l8 6 8-6" /></svg
-                ></span>
-                <div class="transparency-body">
-                  <h3 class="transparency-item-title">Confirmaciones documentales</h3>
-                  <p class="transparency-item-desc">
-                    Los depósitos y retiros se acreditan con comprobantes por correo electrónico y
-                    respaldo documental formal, garantizando la trazabilidad completa de cada
-                    movimiento.
-                  </p>
-                </div>
+                <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M4 7l8 6 8-6"/></svg></span>
+              <div class="transparency-body">
+              <h3 class="transparency-item-title">Confirmaciones documentales</h3>
+                <p class="transparency-item-desc">
+                  Los depósitos y retiros se acreditan con comprobantes por correo electrónico y
+                  respaldo documental formal, garantizando la trazabilidad completa de cada
+                  movimiento.
+                </p>
               </div>
+            </div>
               <div class="transparency-item">
-                <span class="step-icon" aria-hidden="true"
-                  ><svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.6"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path d="M3 12a9 9 0 1 0 3-6.7" />
-                    <polyline points="3 4 3 9 8 9" />
-                    <polyline points="12 7 12 12 15 14" /></svg
-                ></span>
-                <div class="transparency-body">
-                  <h3 class="transparency-item-title">Acceso histórico y trazabilidad</h3>
-                  <p class="transparency-item-desc">
-                    La aplicación actualiza el saldo diariamente al cierre del mercado (18:00 UTC-3)
-                    y permite consultar el historial completo de movimientos de la cuenta.
-                  </p>
-                </div>
+                <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><polyline points="3 4 3 9 8 9"/><polyline points="12 7 12 12 15 14"/></svg></span>
+              <div class="transparency-body">
+              <h3 class="transparency-item-title">Acceso histórico y trazabilidad</h3>
+                <p class="transparency-item-desc">
+                  La aplicación actualiza el saldo diariamente al cierre del mercado (18:00 UTC-3) y
+                  permite consultar el historial completo de movimientos de la cuenta.
+                </p>
               </div>
+            </div>
             </div>
             <p class="transparency-closing">
               Todas las operaciones y movimientos se encuentran documentados, permitiendo un
@@ -554,21 +368,32 @@
               Rendimientos anuales en USD, netos de comisiones del servicio.
             </p>
           </header>
-          <div class="results-summary" aria-hidden="true">
-            <svg
-              class="results-summary-chart"
-              viewBox="0 0 300 90"
-              preserveAspectRatio="none"
-              fill="none"
-            >
-              <polyline
-                points="0,76 28,70 56,73 84,58 112,61 140,44 168,48 196,30 224,34 252,16 280,20 300,10"
-                stroke="var(--wb-green-2)"
-                stroke-width="2.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
+          <div class="results-summary">
+            <!--
+              Componente de gráfico interactivo — estructura lista para conectar
+              con datos reales de la operatoria. Mientras no estén conectados,
+              usa un mock fácilmente reemplazable (ver MOCK_MONTHLY_RETURNS en main.js).
+              El polyline y los círculos se regeneran desde ese mismo array.
+            -->
+            <div class="results-chart-wrap" id="results-chart">
+              <svg
+                class="results-summary-chart"
+                id="results-chart-svg"
+                viewBox="0 0 600 120"
+                preserveAspectRatio="none"
+                fill="none"
+              >
+                <polyline
+                  id="results-chart-line"
+                  points="10.0,66.7 62.7,46.7 115.5,86.7 168.2,30.0 220.9,73.3 273.6,56.7 326.4,26.7 379.1,80.0 431.8,40.0 484.5,63.3 537.3,50.0 590.0,60.0"
+                  stroke="var(--wb-green-2)"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <div class="results-chart-tooltip" id="results-chart-tooltip"></div>
+            </div>
             <div class="results-summary-stats">
               <div class="results-summary-stat">
                 <span class="results-summary-value">+160%</span>
@@ -804,7 +629,7 @@
 
     <!-- Footer -->
     <footer class="institutional-line">
-      <span class="institutional-name">Winbit &ndash; Trading de Futuros</span>
+      <span class="institutional-name">Winbit &ndash; Gestión Activa en USD</span>
       <span class="institutional-copy">&copy; 2026 Winbit. Todos los derechos reservados.</span>
     </footer>
 
