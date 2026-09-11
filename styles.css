@@ -1144,6 +1144,14 @@ img {
 @media (max-width: 767px) {
   #inversion::before {
     width: min(220px, 55%);
+    opacity: 0.45;
+  }
+
+  /* La ultima card (Comision del servicio) cae justo sobre la silueta del
+     edificio en mobile; refuerza el contraste del texto sin tapar el fondo. */
+  #inversion .step-title,
+  #inversion .step-desc {
+    text-shadow: 0 2px 8px rgba(13, 15, 14, 0.9);
   }
 }
 
@@ -1581,10 +1589,6 @@ img {
 
 .faq-item {
   border-bottom: 1px solid var(--color-border);
-}
-
-.faq-item:first-child {
-  border-top: 1px solid var(--color-border);
 }
 
 .faq-question {
@@ -2041,13 +2045,6 @@ body.menu-open .header {
     gap: 0;
   }
 
-  /* 1. HERO MOBILE */
-  .hero {
-    padding-top: calc(var(--header-height) + 50px);
-    min-height: auto;
-    padding-bottom: 3rem;
-  }
-
   /* En mobile no se usa el fondo a pantalla completa (tapa el texto) —
      se muestra una versión chica, como esquina decorativa, igual que el
      resto de los fondos de sección en mobile. */
@@ -2114,6 +2111,16 @@ body.menu-open .header {
   /* 3. SECTIONS (COMPACTACIÓN) */
   .section {
     padding: 3.5rem 0; /* Padding global mas compacto */
+  }
+
+  /* Redeclarado despues de .section: .section define el mismo shorthand
+     "padding" (misma especificidad, gana por orden) y pisaba el padding-top
+     del header fijo, haciendo que el logo del hero quedara tapado por la
+     barra de navegacion en mobile. */
+  .hero {
+    padding-top: calc(var(--header-height) + 50px);
+    min-height: auto;
+    padding-bottom: 3rem;
   }
 
   .section-header {
