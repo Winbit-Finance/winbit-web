@@ -40,7 +40,7 @@
   --spacing-xl: 5rem;
   --spacing-2xl: 8rem;
 
-  --header-height: 90px;
+  --header-height: 100px;
   --container-max: 1100px;
 
   --transition-fast: 0.2s ease;
@@ -126,38 +126,132 @@ img {
   overflow: hidden;
 }
 
-/* Fondo ilustrativo extremadamente sutil (velas fantasma + retícula tenue)
-   solo en Proceso y Transparencia — Preguntas queda sin gráfico, solo crema
-   + líneas divisorias, tal como se pidió. Oculto en mobile: sin margen para
-   que respire. */
-@media (max-width: 767px) {
-  #proceso::before,
-  #transparencia::before {
-    display: none;
-  }
-}
-
 #proceso,
-#transparencia {
+#transparencia,
+#preguntas {
   position: relative;
   overflow: hidden;
 }
 
-#proceso::before,
-#transparencia::before {
-  content: "";
+/* Proceso y Transparencia comparten el mismo gráfico generado. Recorte: la
+   imagen fuente trae un segundo grupo de puntos suelto abajo a la
+   izquierda que no queremos mostrar, así que se hace zoom sobre el recorte
+   de la esquina superior derecha únicamente. */
+#proceso::before {
+  content: '';
   position: absolute;
-  inset: 0;
+  right: 0;
+  bottom: 0;
   z-index: 0;
   pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20320%201400%22%20fill%3D%22none%22%3E%0A%3Cline%20x1%3D%220%22%20y1%3D%22150%22%20x2%3D%22320%22%20y2%3D%22150%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.035%22%20stroke-width%3D%221%22/%3E%0A%3Cline%20x1%3D%220%22%20y1%3D%22450%22%20x2%3D%22320%22%20y2%3D%22450%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.035%22%20stroke-width%3D%221%22/%3E%0A%3Cline%20x1%3D%220%22%20y1%3D%22750%22%20x2%3D%22320%22%20y2%3D%22750%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.035%22%20stroke-width%3D%221%22/%3E%0A%3Cline%20x1%3D%220%22%20y1%3D%221050%22%20x2%3D%22320%22%20y2%3D%221050%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.035%22%20stroke-width%3D%221%22/%3E%0A%3Cline%20x1%3D%220%22%20y1%3D%221300%22%20x2%3D%22320%22%20y2%3D%221300%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.035%22%20stroke-width%3D%221%22/%3E%0A%3Cpolyline%20points%3D%22113%2C1276.3636363636365%2055%2C1161.7272727272727%20183%2C1032.090909090909%20119%2C902.4545454545455%2055%2C773.8181818181819%20182%2C648.1818181818182%20128%2C540.5454545454545%2057%2C416.90909090909093%20197%2C283.27272727272725%20125%2C173.63636363636363%2047%2C43.0%22%20fill%3D%22none%22%20stroke%3D%22%2339836d%22%20stroke-opacity%3D%220.10%22%20stroke-width%3D%221%22%20stroke-dasharray%3D%221%207%22%20stroke-linecap%3D%22round%22/%3E%0A%3Cline%20x1%3D%2247%22%20y1%3D%2219.5%22%20x2%3D%2247%22%20y2%3D%2288.5%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.06%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%2243.5%22%20y%3D%2231.0%22%20width%3D%227%22%20height%3D%2246%22%20fill%3D%22none%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.06%22%20stroke-width%3D%221%22/%3E%0A%3Cline%20x1%3D%22125%22%20y1%3D%22153.4%22%20x2%3D%22125%22%20y2%3D%22202.9%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.06%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%22121.5%22%20y%3D%22161.63636363636363%22%20width%3D%227%22%20height%3D%2233%22%20fill%3D%22none%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.06%22%20stroke-width%3D%221%22/%3E%0A%3Cline%20x1%3D%22197%22%20y1%3D%22259.0%22%20x2%3D%22197%22%20y2%3D%22332.5%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.06%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%22193.5%22%20y%3D%22271.27272727272725%22%20width%3D%227%22%20height%3D%2249%22%20fill%3D%22none%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.06%22%20stroke-width%3D%221%22/%3E%0A%3Cline%20x1%3D%2257%22%20y1%3D%22397.7%22%20x2%3D%2257%22%20y2%3D%22441.2%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.06%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%2253.5%22%20y%3D%22404.90909090909093%22%20width%3D%227%22%20height%3D%2229%22%20fill%3D%22none%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.06%22%20stroke-width%3D%221%22/%3E%0A%3Cline%20x1%3D%22128%22%20y1%3D%22520.8%22%20x2%3D%22128%22%20y2%3D%22567.3%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.06%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%22124.5%22%20y%3D%22528.5454545454545%22%20width%3D%227%22%20height%3D%2231%22%20fill%3D%22none%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.06%22%20stroke-width%3D%221%22/%3E%0A%3Cline%20x1%3D%22182%22%20y1%3D%22627.4%22%20x2%3D%22182%22%20y2%3D%22679.9%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.06%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%22178.5%22%20y%3D%22636.1818181818182%22%20width%3D%227%22%20height%3D%2235%22%20fill%3D%22none%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.06%22%20stroke-width%3D%221%22/%3E%0A%3Cline%20x1%3D%2255%22%20y1%3D%22754.8%22%20x2%3D%2255%22%20y2%3D%22796.8%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.06%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%2251.5%22%20y%3D%22761.8181818181819%22%20width%3D%227%22%20height%3D%2228%22%20fill%3D%22none%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.06%22%20stroke-width%3D%221%22/%3E%0A%3Cline%20x1%3D%22119%22%20y1%3D%22879.0%22%20x2%3D%22119%22%20y2%3D%22948.0%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.06%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%22115.5%22%20y%3D%22890.4545454545455%22%20width%3D%227%22%20height%3D%2246%22%20fill%3D%22none%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.06%22%20stroke-width%3D%221%22/%3E%0A%3Cline%20x1%3D%22183%22%20y1%3D%221008.3%22%20x2%3D%22183%22%20y2%3D%221078.8%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.06%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%22179.5%22%20y%3D%221020.0909090909091%22%20width%3D%227%22%20height%3D%2247%22%20fill%3D%22none%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.06%22%20stroke-width%3D%221%22/%3E%0A%3Cline%20x1%3D%2255%22%20y1%3D%221140.2%22%20x2%3D%2255%22%20y2%3D%221197.2%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.06%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%2251.5%22%20y%3D%221149.7272727272727%22%20width%3D%227%22%20height%3D%2238%22%20fill%3D%22none%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.06%22%20stroke-width%3D%221%22/%3E%0A%3Cline%20x1%3D%22113%22%20y1%3D%221254.1%22%20x2%3D%22113%22%20y2%3D%221315.6%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.06%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%22109.5%22%20y%3D%221264.3636363636365%22%20width%3D%227%22%20height%3D%2241%22%20fill%3D%22none%22%20stroke%3D%22%2314140f%22%20stroke-opacity%3D%220.06%22%20stroke-width%3D%221%22/%3E%0A%3C/svg%3E");
+  width: min(336px, 32%);
+  aspect-ratio: 807 / 972;
+  background-image: url('assets/proceso-chart-bg.webp');
   background-repeat: no-repeat;
-  background-position: right -20px top;
-  background-size: 260px 100%;
+  background-position: right top;
+  background-size: 179.4% 111.7%;
+  opacity: 0.8;
+}
+
+/* Transparencia: gráfico propio (más detallado), separado del de Proceso. */
+/* Recorte en dos partes: la imagen fuente trae un grupo principal (derecha,
+   casi toda la altura) y uno secundario suelto abajo a la izquierda — se
+   recortan por separado para que cada uno quede en su esquina real. */
+/* Invertida verticalmente: las velas quedan apuntando hacia abajo, y el
+   borde recortado (que antes quedaba "cortado" abajo) pasa a estar pegado
+   al margen superior de la sección, para que se vea como una esquina. */
+#transparencia::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 0;
+  pointer-events: none;
+  width: min(393px, 34%);
+  aspect-ratio: 738 / 816;
+  background-image: url('assets/transparencia-chart-bg.webp');
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: 196.2% 133.1%;
+  opacity: 0.85;
+  transform: scaleY(-1);
+}
+
+#transparencia::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 0;
+  pointer-events: none;
+  width: min(302px, 30%);
+  aspect-ratio: 462 / 375;
+  background-image: url('assets/transparencia-chart-bg.webp');
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 313.4% 289.6%;
+  opacity: 0.85;
+}
+
+@media (max-width: 767px) {
+  #transparencia::before {
+    width: min(143px, 48%);
+  }
+
+  #transparencia::after {
+    width: min(136px, 38%);
+  }
+}
+
+/* Preguntas: formas difuminadas generadas, muy sutiles. La imagen fuente
+   trae dos grupos separados (uno arriba a la derecha, otro abajo a la
+   izquierda) — se recorta cada uno por separado con zoom, en vez de mostrar
+   la imagen completa, para que cada grupo quede en su esquina. */
+#preguntas::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 0;
+  pointer-events: none;
+  width: min(420px, 42%);
+  aspect-ratio: 556 / 684;
+  background-image: url('assets/preguntas-shapes-bg.webp');
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: 300.7% 137.6%;
+  opacity: 0.6;
+}
+
+#preguntas::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 0;
+  pointer-events: none;
+  width: min(260px, 32%);
+  aspect-ratio: 532 / 592;
+  background-image: url('assets/preguntas-shapes-bg.webp');
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 314.3% 159%;
+  opacity: 0.6;
+}
+
+@media (max-width: 767px) {
+  #preguntas::before {
+    width: min(180px, 45%);
+  }
+
+  #preguntas::after {
+    width: min(130px, 35%);
+  }
 }
 
 #proceso .container,
-#transparencia .container {
+#transparencia .container,
+#preguntas .container {
   position: relative;
   z-index: 1;
 }
@@ -178,14 +272,14 @@ img {
 }
 
 .section-cream .step-card {
-  background-color: rgba(255, 255, 255, 0.55);
-  border-color: var(--wb-ink-border);
-  border-left-color: var(--wb-green);
+  border-bottom-color: var(--wb-ink-border);
 }
 
-.section-cream .step-card:hover {
-  background-color: rgba(255, 255, 255, 0.8);
-  border-color: rgba(57, 131, 109, 0.35);
+.section-cream .step-body {
+  border-left-color: rgba(57, 131, 109, 0.35);
+}
+
+.section-cream .step-card:hover .step-body {
   border-left-color: var(--wb-green);
 }
 
@@ -263,6 +357,24 @@ img {
   transform: translate(0, 0);
 }
 
+/* Kicker chico arriba del título (referencia GPT: "GESTIÓN ACTIVA EN USD"
+   sobre INVERSIÓN). Opcional por sección — solo se usa donde se agrega el
+   <span> en el HTML. */
+.section-kicker {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--wb-green-2);
+  margin-bottom: 10px;
+}
+
+.section-cream .section-kicker {
+  color: var(--wb-green);
+}
+
 .section-title {
   font-family: var(--font-display);
   font-size: clamp(2.6rem, 6vw, 4.2rem);
@@ -281,15 +393,14 @@ img {
   -webkit-text-fill-color: var(--wb-cream) !important;
 }
 
-/* Short solid brand rule under the title */
+/* Filete difuminado bajo el título (fade a los dos lados) */
 .section-title::after {
   content: '';
   display: block;
-  width: 64px;
-  height: 3px;
-  border-radius: 2px;
-  background: var(--wb-green-2);
+  width: min(420px, calc(100% + 70px));
+  height: 1px;
   margin-top: 18px;
+  background: linear-gradient(to right, transparent, rgba(71, 151, 133, 0.52), transparent);
   position: absolute;
   left: 0;
 }
@@ -403,6 +514,19 @@ img {
   flex-shrink: 0;
 }
 
+/* El logo del header solo aparece una vez que se hizo scroll (estado
+   "solid"): al tope de la página no se repite, porque el logo grande ya
+   está presente en el Hero. */
+@media (min-width: 768px) {
+  .logo-link {
+    display: none;
+  }
+
+  .header.header-solid .logo-link {
+    display: flex;
+  }
+}
+
 .header-investor-link {
   display: none;
   font-size: 0.86rem;
@@ -426,7 +550,7 @@ img {
 }
 
 .logo-img {
-  height: 48px;
+  height: 43px;
   width: auto;
 }
 
@@ -587,14 +711,27 @@ img {
 
 /* Hero section */
 .hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: var(--header-height);
+  padding-top: calc(var(--header-height) + 3rem);
+  padding-bottom: 4rem;
   position: relative;
   overflow: hidden;
   background-color: var(--wb-carbon);
+}
+
+/* Velo sobre el fondo de velas: asegura contraste del título y los CTAs
+   sin importar qué tan brillante quede el gráfico detrás en cada ancho. */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    to right,
+    rgba(13, 15, 14, 0.55) 0%,
+    rgba(13, 15, 14, 0.2) 45%,
+    transparent 65%
+  );
 }
 
 /* Bug real encontrado en la revisión: al ser .hero un flex-container, su
@@ -683,15 +820,15 @@ img {
    original (portada de reportes, etc.) */
 .hero-logo {
   display: block;
-  height: 42px;
+  height: 72px;
   width: auto;
-  margin-bottom: 1.6rem;
+  margin-bottom: 2rem;
 }
 
 @media (max-width: 767px) {
   .hero-logo {
-    height: 34px;
-    margin-bottom: 1.2rem;
+    height: 46px;
+    margin-bottom: 1.4rem;
   }
 }
 
@@ -712,13 +849,10 @@ img {
   font-size: clamp(2.2rem, 4.6vw, 3.4rem);
 }
 
-/* Line2 is longer text â€” scale it down so it matches line1's visual width */
 .hero-title-line2 {
   display: block;
-  font-size: clamp(1.1rem, 2.3vw, 1.7rem);
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  margin-top: 0.25em;
+  font-size: clamp(2.2rem, 4.6vw, 3.4rem);
+  margin-top: 0.15em;
   color: var(--wb-green-2);
 }
 
@@ -731,80 +865,83 @@ img {
   line-height: 1.75;
   text-align: left;
   margin-left: 0;
-  max-width: 92%;
+  max-width: min(92%, 420px);
 }
 
-/* Hero CTAs — grilla 2x2 compacta y sobria en desktop, apilada en mobile */
+/* Hero CTAs — botón sólido + link de texto */
 .hero-ctas {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 8px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px 28px;
   max-width: 100%;
   animation: fadeInUp 0.8s ease 0.3s forwards;
   opacity: 0;
 }
 
-@media (min-width: 560px) {
-  .hero-ctas {
-    grid-template-columns: 1fr 1fr;
-    gap: 10px 14px;
-  }
-}
-
 .hero-ctas .cta-btn {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  text-align: left;
-  width: 100%;
-  padding: 11px 16px;
+  justify-content: center;
+  width: auto;
+  padding: 14px 28px;
 }
 
-.cta-primary,
-.cta-secondary {
-  background-color: transparent;
-  border: 1px solid rgba(236, 228, 213, 0.16);
+.cta-solid {
+  background-color: var(--wb-green-2);
+  border: 1px solid var(--wb-green-2);
   color: var(--wb-cream);
   border-radius: 6px;
-  font-size: 0.88rem;
+  font-size: 0.92rem;
+  font-weight: 700;
 }
 
-.cta-primary:hover,
-.cta-secondary:hover {
-  background-color: rgba(71, 151, 133, 0.1);
-  border-color: rgba(71, 151, 133, 0.5);
-  color: var(--wb-cream);
+.cta-solid:hover {
+  background-color: var(--wb-green);
+  border-color: var(--wb-green);
 }
 
-.hero-ctas .cta-btn::after {
+.hero-ctas .cta-solid::after {
   content: '\2192';
-  color: var(--wb-green-2);
+  color: var(--wb-cream);
   margin-left: 12px;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   transition: transform var(--transition-fast);
 }
 
-.hero-ctas .cta-btn:hover::after {
+.hero-ctas .cta-solid:hover::after {
   transform: translateX(3px);
 }
 
-/* ==================== Hero: fondo abstracto sutil ==================== */
-/* Grilla tenue + línea de mercado suave + barras discretas, sin cards
-   flotantes ni overlays — solo un fondo ambiental detrás del texto. */
-.hero-visual {
-  position: relative;
-  flex: 1 1 380px;
-  min-width: 0;
-  max-width: 520px;
-  height: 320px;
-  display: none;
+.hero-link {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--wb-cream);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(236, 228, 213, 0.4);
+  text-shadow: 0 2px 10px rgba(13, 15, 14, 0.85);
+  transition: color var(--transition-fast);
 }
 
-.hero-visual-chart {
+.hero-link:hover {
+  color: var(--wb-green-2);
+}
+
+/* ==================== Hero: fondo generado ==================== */
+/* Gráfico de velas (imagen generada), sin cards flotantes ni overlays —
+   solo un fondo ambiental detrás del texto, sin datos reales. */
+.hero-visual {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  display: none;
+  background-image: url('assets/hero-chart-bg.webp');
+  background-repeat: no-repeat;
+  background-position: right 65%;
+  background-size: cover;
+  opacity: 0.9;
 }
 
 @media (min-width: 900px) {
@@ -818,6 +955,12 @@ img {
   display: grid;
   grid-template-columns: 1fr;
   gap: 32px;
+}
+
+/* Proceso se mantiene en una sola columna en todos los anchos — .steps-grid
+   se comparte con Inversión, que sí pasa a 2 columnas en desktop. */
+#proceso .steps-grid {
+  grid-template-columns: 1fr;
 }
 
 /* ComisiÃ³n card â€” centered, spans 2 columns on desktop */
@@ -903,60 +1046,14 @@ img {
   display: flex;
   align-items: flex-start;
   gap: 18px;
-  background-color: rgba(71, 151, 133, 0.06);
-  border: 1px solid rgba(71, 151, 133, 0.28);
-  border-left: 2px solid rgba(71, 151, 133, 0.45);
-  border-radius: 12px;
-  padding: 28px 26px;
-  transition: all var(--transition-base);
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(71, 151, 133, 0.18);
+  transition: opacity var(--transition-base);
   position: relative;
-  /* overflow: hidden eliminado â€” permitir que el tooltip sobresalga */
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
 }
 
-/* Índice numerado tipo "— 01 / — 02" en la esquina inferior derecha de
-   cada card, inspirado en la numeración de página del reporte mensual de
-   inversor — apenas visible, puramente decorativo, generado con CSS
-   counters (no toca el texto ni el HTML de cada paso). */
-.steps-grid {
-  counter-reset: wb-step;
-}
-
-.steps-grid .step-card {
-  counter-increment: wb-step;
-}
-
-.transparency-grid {
-  counter-reset: wb-step;
-}
-
-.transparency-grid .transparency-item {
-  counter-increment: wb-step;
-}
-
-.steps-grid .step-card::after,
-.transparency-grid .transparency-item::after {
-  content: '\2014 ' counter(wb-step, decimal-leading-zero);
-  position: absolute;
-  bottom: 14px;
-  right: 18px;
-  top: auto;
-  font-family: var(--font-display);
-  font-size: 0.8rem;
-  font-weight: 500;
-  letter-spacing: 0.03em;
-  line-height: 1;
-  color: var(--wb-cream);
-  opacity: 0.3;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.section-cream .steps-grid .step-card::after,
-.section-cream .transparency-grid .transparency-item::after {
-  color: var(--wb-green);
-  opacity: 0.32;
+.steps-grid .step-card:last-child {
+  border-bottom: none;
 }
 
 /* Íconos en fondo oscuro (p. ej. Inversión): tono crema apagado, no verde
@@ -987,33 +1084,13 @@ img {
 
 .step-body {
   min-width: 0;
+  border-left: 1px solid rgba(71, 151, 133, 0.35);
+  padding-left: 18px;
+  transition: border-color var(--transition-base);
 }
 
-.step-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 2px;
-  height: 100%;
-  background-color: var(--color-accent);
-  opacity: 0;
-  transition: opacity var(--transition-base);
-}
-
-.step-card:hover {
-  background-color: rgba(71, 151, 133, 0.12);
-  border-color: rgba(71, 151, 133, 0.5);
+.step-card:hover .step-body {
   border-left-color: var(--color-accent);
-  transform: translateY(-2px);
-}
-
-.step-card:hover::before {
-  opacity: 1;
-}
-
-.step-number {
-  display: none;
 }
 
 .step-title {
@@ -1042,6 +1119,114 @@ img {
 }
 
 /* ==================== Investment ==================== */
+#inversion {
+  overflow: hidden;
+}
+
+/* Fondo fotográfico generado (edificio, diagonal), muy sutil sobre el
+   ambiente oscuro. Tamaño porcentual: se ve también en mobile, más chico. */
+#inversion::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  pointer-events: none;
+  width: min(520px, 42%);
+  height: 100%;
+  background-image: url('assets/inversion-building-bg.webp');
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: contain;
+  opacity: 0.9;
+}
+
+@media (max-width: 767px) {
+  #inversion::before {
+    width: min(220px, 55%);
+  }
+}
+
+#inversion .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Divisor en cruz sobre la grilla 2x2 de Inversión (referencia GPT):
+   reemplaza el borde inferior por card (pensado para la lista de 1
+   columna de Proceso/Transparencia) por una única cruz centrada. */
+#inversion .step-card {
+  border-bottom: none;
+}
+
+#inversion .steps-grid {
+  position: relative;
+}
+
+#inversion .steps-grid::before,
+#inversion .steps-grid::after {
+  content: '';
+  position: absolute;
+  background: rgba(236, 228, 213, 0.22);
+  pointer-events: none;
+}
+
+#inversion .steps-grid::before {
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+}
+
+#inversion .steps-grid::after {
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+}
+
+@media (max-width: 767px) {
+  #inversion .steps-grid::before,
+  #inversion .steps-grid::after {
+    display: none;
+  }
+}
+
+/* Tagline decorativo, esquina inferior derecha (referencia GPT). */
+.investment-tagline {
+  position: absolute;
+  right: clamp(20px, 4vw, 48px);
+  bottom: clamp(20px, 4vw, 40px);
+  z-index: 1;
+  text-align: right;
+  pointer-events: none;
+}
+
+.investment-tagline::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: var(--wb-green-2);
+  margin: 0 0 10px auto;
+}
+
+.investment-tagline-line {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(236, 228, 213, 0.55);
+  line-height: 1.6;
+}
+
+@media (max-width: 767px) {
+  .investment-tagline {
+    display: none;
+  }
+}
+
 .investment-content {
   display: grid;
   grid-template-columns: 1fr;
@@ -1099,20 +1284,13 @@ img {
   display: flex;
   align-items: flex-start;
   gap: 18px;
-  background-color: var(--color-bg-card);
-  border: 1px solid var(--color-border);
-  border-radius: 12px;
-  padding: 28px 26px;
-  border-left: 3px solid var(--color-accent);
-  transition: border-color var(--transition-base);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  padding: 24px 0;
+  border-bottom: 1px solid var(--color-border);
   position: relative;
 }
 
-.transparency-item:hover {
-  border-color: var(--color-border-accent);
-  border-left-color: var(--color-accent);
+.transparency-grid .transparency-item:last-child {
+  border-bottom: none;
 }
 
 .transparency-item .step-icon {
@@ -1121,6 +1299,8 @@ img {
 
 .transparency-body {
   min-width: 0;
+  border-left: 3px solid var(--color-accent);
+  padding-left: 18px;
 }
 
 .transparency-item-title {
@@ -1150,14 +1330,10 @@ img {
 /* Transparencia ahora vive en el ambiente crema — misma familia visual
    que Proceso: cards claras, ícono verde, texto en tinta oscura. */
 .section-cream .transparency-item {
-  background-color: rgba(255, 255, 255, 0.55);
-  border-color: var(--wb-ink-border);
-  border-left-color: var(--wb-green);
+  border-bottom-color: var(--wb-ink-border);
 }
 
-.section-cream .transparency-item:hover {
-  background-color: rgba(255, 255, 255, 0.8);
-  border-color: rgba(57, 131, 109, 0.35);
+.section-cream .transparency-body {
   border-left-color: var(--wb-green);
 }
 
@@ -1189,67 +1365,10 @@ img {
   max-width: 780px;
   margin: 0 auto 2.4rem;
   padding: 28px clamp(20px, 4vw, 48px) 22px;
-  border: 1px solid rgba(236, 228, 213, 0.1);
-  border-radius: 12px;
-  background: linear-gradient(
-    180deg,
-    rgba(71, 151, 133, 0.07) 0%,
-    rgba(71, 151, 133, 0.02) 100%
-  );
+  border-left: 1px solid rgba(236, 228, 213, 0.1);
+  border-right: 1px solid rgba(236, 228, 213, 0.1);
+  background: linear-gradient(180deg, rgba(71, 151, 133, 0.07) 0%, rgba(71, 151, 133, 0.02) 100%);
   overflow: hidden;
-}
-
-.results-chart-wrap {
-  position: relative;
-  margin-bottom: 18px;
-}
-
-.results-summary-chart {
-  display: block;
-  width: 100%;
-  height: 64px;
-  opacity: 0.7;
-  overflow: visible;
-}
-
-.results-chart-point {
-  fill: var(--wb-carbon);
-  stroke: var(--wb-green-2);
-  stroke-width: 1.5;
-  opacity: 0.55;
-  cursor: pointer;
-  transition:
-    opacity var(--transition-fast),
-    r var(--transition-fast);
-}
-
-.results-chart-point:hover,
-.results-chart-point:focus,
-.results-chart-point.active {
-  opacity: 1;
-  r: 5.5;
-  outline: none;
-}
-
-.results-chart-tooltip {
-  position: absolute;
-  transform: translate(-50%, -130%);
-  background: var(--wb-carbon);
-  border: 1px solid rgba(71, 151, 133, 0.4);
-  color: var(--wb-cream);
-  font-family: var(--font-display);
-  font-size: 0.78rem;
-  padding: 4px 10px;
-  border-radius: 6px;
-  white-space: nowrap;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity var(--transition-fast);
-  z-index: 2;
-}
-
-.results-chart-tooltip.visible {
-  opacity: 1;
 }
 
 .results-summary-stats {
@@ -1266,27 +1385,45 @@ img {
   align-items: center;
   gap: 6px;
   text-align: center;
+  transition: transform var(--transition-base);
+}
+
+.results-summary-stat:hover {
+  transform: translateY(-5px);
 }
 
 .results-summary-value {
   font-family: var(--font-display);
-  font-size: clamp(1.7rem, 3.4vw, 2.3rem);
+  font-size: clamp(4rem, 9vw, 96px);
   font-weight: 700;
   color: var(--wb-cream);
+  letter-spacing: -0.02em;
   line-height: 1;
+
+  /* Mismo efecto punteado que los rendimientos anuales, a mayor tamaño */
+  background-image: radial-gradient(circle, currentColor 35%, transparent 40%);
+  background-size: 4px 4px;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
 }
 
 .results-summary-label {
-  font-size: 0.78rem;
+  font-size: 0.68rem;
   letter-spacing: 0.03em;
-  text-transform: uppercase;
   color: rgba(236, 228, 213, 0.6);
+  max-width: 200px;
+}
+
+.results-summary-stat:hover .results-summary-value {
+  color: var(--wb-green-2);
 }
 
 .results-summary-sep {
   width: 1px;
-  height: 40px;
-  background: rgba(236, 228, 213, 0.14);
+  height: 76px;
+  background: linear-gradient(to bottom, transparent, rgba(236, 228, 213, 0.32), transparent);
 }
 
 @media (max-width: 480px) {
@@ -1319,7 +1456,10 @@ img {
 
 @media (min-width: 768px) {
   .results-grid {
-    grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(
+        0,
+        1fr
+      );
     gap: 0;
     width: 100%;
     max-width: 900px;
@@ -1334,7 +1474,7 @@ img {
     background: rgba(255, 255, 255, 0.08);
     align-self: center;
     transition: background var(--transition-base);
-    margin: 0 56px;
+    margin: 0 clamp(14px, 4vw, 56px);
   }
 
   .results-grid > * {
@@ -1364,7 +1504,7 @@ img {
 .result-card:hover .result-pct,
 .result-card:hover .pct-sign,
 .result-card:hover .result-year {
-  color: var(--wb-cream);
+  color: var(--wb-green-2);
 }
 
 .result-year {
@@ -1380,7 +1520,7 @@ img {
 
 .result-pct {
   font-family: var(--font-display);
-  font-size: clamp(3.5rem, 7vw, 82px);
+  font-size: clamp(2.6rem, 6.5vw, 82px);
   font-weight: 600;
   color: var(--color-white);
   letter-spacing: -0.02em;
@@ -1505,6 +1645,50 @@ img {
 
 #contacto {
   position: relative;
+  overflow: hidden;
+}
+
+/* Fondo decorativo generado (líneas + nodos), esquina superior derecha. */
+#contacto::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 0;
+  pointer-events: none;
+  width: min(420px, 45%);
+  height: 100%;
+  background-image: url('assets/contacto-lines-bg.webp');
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: contain;
+  opacity: 0.9;
+}
+
+@media (max-width: 767px) {
+  #contacto::before {
+    width: min(200px, 55%);
+  }
+}
+
+#contacto .container {
+  position: relative;
+  z-index: 1;
+}
+
+.contacto-logo {
+  height: 48px;
+  width: auto;
+  margin-top: -6.5rem;
+  margin-bottom: clamp(2.5rem, 6vw, 4rem);
+}
+
+@media (max-width: 767px) {
+  .contacto-logo {
+    height: 40px;
+    margin-top: -2.75rem;
+    margin-bottom: 2rem;
+  }
 }
 
 #contacto .section-header {
@@ -1516,47 +1700,43 @@ img {
   letter-spacing: 0.06em;
 }
 
-#contacto .section-title::after {
-  width: min(420px, calc(100% + 70px));
-  height: 1px;
-  margin-top: 18px;
-  background: linear-gradient(to right, transparent, rgba(71, 151, 133, 0.52), transparent);
-}
-
-.contact-subtitle {
-  margin: 1.1rem auto 0;
-  max-width: 760px;
-  text-align: center;
-  color: rgba(255, 255, 255, 0.72);
-  font-size: 0.98rem;
-  line-height: 1.7;
-  letter-spacing: 0.02em;
-}
-
 .contact-methods {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: clamp(1rem, 2.4vw, 1.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1.5rem, 5vw, 3.5rem);
+  flex-wrap: wrap;
+}
+
+.contact-divider {
+  width: 1px;
+  height: 90px;
+  background: rgba(236, 228, 213, 0.14);
+  align-self: center;
+  flex-shrink: 0;
+}
+
+@media (max-width: 480px) {
+  .contact-divider {
+    display: none;
+  }
 }
 
 .contact-item {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  padding: clamp(1rem, 2.5vw, 1.35rem);
-  min-height: 104px;
+  text-align: center;
+  gap: 0.9rem;
   background: transparent;
-  border: 1px solid rgba(236, 228, 213, 0.14);
-  border-radius: 8px;
+  border: none;
+  padding: 0;
   position: relative;
-  transition:
-    border-color var(--transition-base),
-    background-color var(--transition-base);
 }
 
-.contact-item:hover {
-  border-color: rgba(71, 151, 133, 0.4);
-  background-color: rgba(71, 151, 133, 0.04);
+.contact-item:hover .contact-icon {
+  border-color: var(--wb-green-2);
+  background-color: rgba(71, 151, 133, 0.08);
 }
 
 .contact-icon {
@@ -1570,6 +1750,9 @@ img {
   color: var(--wb-green-2);
   border: 1px solid rgba(71, 151, 133, 0.4);
   background: transparent;
+  transition:
+    border-color var(--transition-base),
+    background-color var(--transition-base);
 }
 
 .contact-icon svg {
@@ -1580,8 +1763,19 @@ img {
 .contact-copy {
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
+  align-items: center;
+  gap: 0.4rem;
   min-width: 0;
+}
+
+/* Filete difuminado bajo el valor — misma estética que el resto del sitio
+   (fade a los dos lados), en vez de una línea sólida. */
+.contact-underline {
+  display: block;
+  width: 44px;
+  height: 1px;
+  margin-top: 0.4rem;
+  background: linear-gradient(to right, transparent, rgba(71, 151, 133, 0.7), transparent);
 }
 
 .contact-label {
@@ -1801,7 +1995,7 @@ body.menu-open .header {
 /* ==================== Responsive ==================== */
 @media (max-width: 767px) {
   .header {
-    height: 78px;
+    height: 86px;
     opacity: 1;
     pointer-events: auto;
     background: rgba(13, 15, 14, 0.32);
@@ -1849,9 +2043,25 @@ body.menu-open .header {
 
   /* 1. HERO MOBILE */
   .hero {
-    padding-top: calc(var(--header-height) + 34px);
+    padding-top: calc(var(--header-height) + 50px);
     min-height: auto;
     padding-bottom: 3rem;
+  }
+
+  /* En mobile no se usa el fondo a pantalla completa (tapa el texto) —
+     se muestra una versión chica, como esquina decorativa, igual que el
+     resto de los fondos de sección en mobile. */
+  .hero-visual {
+    display: block;
+    inset: auto;
+    top: auto;
+    left: auto;
+    right: 0;
+    bottom: 0;
+    width: min(200px, 52%);
+    height: 45%;
+    background-position: right bottom;
+    opacity: 0.55;
   }
 
   .hero-content {
@@ -1872,9 +2082,9 @@ body.menu-open .header {
   }
 
   .hero-title-line2 {
-    font-size: 0.95rem; /* Subtitulo alineado */
-    line-height: 1.35;
-    margin-top: 8px;
+    font-size: 1.55rem;
+    line-height: 1.25;
+    margin-top: 6px;
     max-width: 95%;
   }
 
@@ -1885,14 +2095,15 @@ body.menu-open .header {
     font-size: 0.85rem; /* Párrafo compacto */
     line-height: 1.6;
     margin-top: 1.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
   }
 
   /* 2. BOTONES */
   .hero-ctas {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: flex-start;
     max-width: 100%;
-    gap: 10px; /* Menos espacio entre botones */
+    gap: 14px;
   }
 
   .hero-ctas .cta-btn {
@@ -1957,7 +2168,7 @@ body.menu-open .header {
   }
 
   .step-card {
-    padding: 20px 16px; /* Card más chata */
+    padding: 18px 0;
   }
 
   .step-title {
@@ -1971,7 +2182,7 @@ body.menu-open .header {
   }
 
   .transparency-item {
-    padding: 20px 16px;
+    padding: 18px 0;
   }
 
   .transparency-item-title {
@@ -1989,19 +2200,9 @@ body.menu-open .header {
   }
 
   /* 6. CONTACTO Y FOOTER */
-  .contact-item {
-    min-height: 118px;
-    padding: 1rem;
-  }
 
   #contacto .section-title {
     font-size: 2rem;
-  }
-
-  .contact-subtitle {
-    font-size: 0.86rem;
-    line-height: 1.6;
-    margin-top: 0.85rem;
   }
 
   .contact-icon {
@@ -2040,14 +2241,6 @@ body.menu-open .header {
   .steps-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  .transparency-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .contact-methods {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
 
 @media (min-width: 1024px) {
@@ -2072,10 +2265,6 @@ body.menu-open .header {
 
   .mobile-menu-btn {
     display: none;
-  }
-
-  .logo-img {
-    height: 48px;
   }
 
   .header-left {
@@ -2117,7 +2306,7 @@ body.menu-open .header {
 
 .expand-reveal-inner {
   width: 100%;
-  height: 520px;
+  height: 260px;
   background-image: url('assets/hero-bg-1.png');
   background-attachment: fixed;
   background-size: cover;
@@ -2127,7 +2316,20 @@ body.menu-open .header {
 
 @media (max-width: 767px) {
   .expand-reveal-inner {
-    height: 280px;
+    height: 150px;
     background-attachment: scroll;
   }
+}
+
+/* Franja de transición Proceso → Inversión (imagen generada). La imagen
+   fuente tiene barras oscuras arriba/abajo del edificio, así que se recorta
+   para mostrar solo la franja con contenido real, sin bordes negros. La
+   altura del box coincide con la resolución nativa de esa franja (262px)
+   para no estirar/pixelar la imagen — cero upscale. */
+.expand-reveal-inner--proceso-inversion {
+  height: 262px;
+  background-image: url('assets/transicion-proceso-inversion.webp');
+  background-size: auto;
+  background-position: center -228px;
+  background-attachment: scroll;
 }

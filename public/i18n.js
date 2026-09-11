@@ -13,13 +13,12 @@ const translations = {
     logoSubtitle: 'Trading de Futuros',
 
     // Hero
-    heroTitle: 'Gestión de capital privado en mercados financieros internacionales',
+    heroTitleLine1: 'Capital en movimiento,',
+    heroTitleLine2: 'Con criterio.',
     heroSubtitle:
-      'Operamos diariamente en el mercado de futuros del CME (Chicago Mercantile Exchange), priorizando el control del riesgo y la generación de resultados consistentes.',
-    ctaProceso: 'Conocer el proceso',
-    ctaInvertir: 'Inversión',
-    ctaTransparencia: 'Transparencia',
-    ctaResultados: 'Resultados históricos',
+      'Gestión profesional de capital privado en USD mediante estrategias en mercados financieros internacionales.',
+    ctaConocerWinbit: 'Conocer Winbit',
+    ctaVerResultados: 'Ver resultados históricos',
 
     // Proceso
     procesoTitle: 'Proceso',
@@ -27,6 +26,7 @@ const translations = {
       'Metodología operativa enfocada en la generación de resultados consistentes y sustentada en el control del riesgo.',
 
     // Inversión
+    inversionKicker: 'Gestión activa en USD',
     inversionTitle: 'Inversión',
 
     // Transparencia
@@ -52,7 +52,7 @@ const translations = {
     resultadosTitleLine2: 'históricos',
     resultadosSubtitle: 'Rendimientos anuales en USD, netos de comisiones del servicio.',
     resultadosDisclaimer:
-      'Resultados históricos. No constituyen promesa ni garantía de rendimientos futuros.',
+      'Resultados históricos. No constituyen promesa ni garantía de rendimientos futuros. Todos los rendimientos se muestran netos de comisiones del servicio de Winbit.',
 
     // Preguntas
     preguntasTitle: 'Preguntas',
@@ -77,8 +77,6 @@ const translations = {
 
     // Contacto
     contactoTitle: 'Contacto',
-    contactoDesc:
-      'Mantenemos una comunicación directa y profesional con cada inversor. Estamos disponibles para consultas, aclaraciones y gestión de solicitudes.',
     contactoEmailLabel: 'Correo electrónico',
     contactoEmail: 'winbit.cfds@gmail.com',
     contactoWhatsAppLabel: 'WhatsApp de atención directa',
@@ -106,19 +104,19 @@ const translations = {
     logoSubtitle: 'Futures Trading',
 
     // Hero
-    heroTitle: 'Private capital management in international financial markets',
+    heroTitleLine1: 'Capital in motion,',
+    heroTitleLine2: 'with criteria.',
     heroSubtitle:
-      'We operate daily in the CME (Chicago Mercantile Exchange) futures market, prioritizing risk control and the generation of consistent results.',
-    ctaProceso: 'Learn the process',
-    ctaInvertir: 'Investment',
-    ctaTransparencia: 'Transparency',
-    ctaResultados: 'Historical returns',
+      'Professional management of private capital in USD through strategies in international financial markets.',
+    ctaConocerWinbit: 'Discover Winbit',
+    ctaVerResultados: 'View historical returns',
 
     // Proceso
     procesoTitle: 'Process',
     procesoSubtitle: 'Operational methodology based on discipline and risk control.',
 
     // Inversión
+    inversionKicker: 'Active management in USD',
     inversionTitle: 'Investment',
 
     // Transparencia
@@ -144,7 +142,7 @@ const translations = {
     resultadosTitleLine2: 'returns',
     resultadosSubtitle: 'Annual returns in USD, net of service fees.',
     resultadosDisclaimer:
-      'Historical results. They do not constitute a promise or guarantee of future returns.',
+      'Historical results. They do not constitute a promise or guarantee of future returns. All returns are shown net of Winbit service fees.',
 
     // Preguntas
     preguntasTitle: 'FAQ',
@@ -168,8 +166,6 @@ const translations = {
 
     // Contacto
     contactoTitle: 'Contact',
-    contactoDesc:
-      'We maintain direct and professional communication with each investor. We are available for inquiries, clarifications, and request management.',
     contactoEmailLabel: 'Email',
     contactoEmail: 'winbit.cfds@gmail.com',
     contactoWhatsAppLabel: 'Direct support WhatsApp',
