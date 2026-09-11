@@ -84,6 +84,6 @@ jobs:
 
       - name: Deploy preview channel (redesign-2026)
         if: github.ref == 'refs/heads/redesign-2026' && github.event_name == 'push'
-        run: npx firebase-tools hosting:channel:deploy redesign-2026 --token "$FIREBASE_TOKEN" --expires 30d
+        run: npx firebase-tools hosting:channel:deploy redesign-2026 --project winbit-app --token "$FIREBASE_TOKEN" --expires 30d
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
