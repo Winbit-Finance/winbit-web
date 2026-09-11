@@ -317,7 +317,45 @@ document.addEventListener('DOMContentLoaded', () => {
     countUpEls.forEach((el) => countObserver.observe(el));
   }
 
-  // ---- Parallax window: hero → Proceso transition ----
-  // The parallax effect is handled purely by CSS (background-attachment: fixed).
-  // No JS needed for this element.
+  // ---- Count-up animation for the summary panel (+160% / 23%) ----
+  // Separado del conteo de arriba: mismo efecto, pero con más duración y
+  // +160% siempre termina último (data-duration por elemento).
+  const summaryCountEls = document.querySelectorAll('.results-summary-value[data-target]');
+
+  if (summaryCountEls.length) {
+    const easeOutSummary = (t) => 1 - Math.pow(1 - t, 3);
+
+    const animateSummaryCount = (el, target, duration) => {
+      const prefix = el.dataset.prefix || '';
+      const suffix = el.dataset.suffix || '';
+      let start = null;
+
+      const step = (ts) => {
+        if (!start) start = ts;
+        const elapsed = ts - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const value = Math.round(easeOutSummary(progress) * target);
+        el.textContent = `${prefix}${value}${suffix}`;
+        if (progress < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    };
+
+    const summaryCountObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const target = parseFloat(el.dataset.target);
+            const duration = parseFloat(el.dataset.duration) || 1600;
+            animateSummaryCount(el, target, duration);
+            summaryCountObserver.unobserve(el);
+          }
+        });
+      },
+      { threshold: 0.3 },
+    );
+
+    summaryCountEls.forEach((el) => summaryCountObserver.observe(el));
+  }
 });

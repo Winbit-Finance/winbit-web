@@ -3,7 +3,7 @@ name: CI
 on:
   pull_request:
   push:
-    branches: [main]
+    branches: [main, redesign-2026]
 
 jobs:
   lint:
@@ -79,5 +79,11 @@ jobs:
       - name: Deploy to Firebase Hosting
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: npx firebase-tools deploy --only hosting --token "$FIREBASE_TOKEN"
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+
+      - name: Deploy preview channel (redesign-2026)
+        if: github.ref == 'refs/heads/redesign-2026' && github.event_name == 'push'
+        run: npx firebase-tools hosting:channel:deploy redesign-2026 --project winbit-app --token "$FIREBASE_TOKEN" --expires 30d
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
