@@ -10,6 +10,11 @@ export default defineConfig({
   plugins: [
     react(),
     VitePWA({
+      // La raíz es la landing estática: ya no necesita service worker. Los
+      // visitantes que todavía tienen el SW de cuando la raíz era la app React
+      // siguen viendo ese build viejo; este sw.js se desregistra solo y borra
+      // sus cachés. Quitar cuando haya pasado tiempo suficiente.
+      selfDestroying: true,
       registerType: 'autoUpdate',
       // Workaround: avoid terser/minify issues during Workbox SW generation on some Node/tooling combos.
       // This keeps SW readable and prevents "unfinished hook action(s) (terser) renderChunk" build failures.
