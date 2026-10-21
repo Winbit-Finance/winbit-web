@@ -26,7 +26,7 @@ describe('UnauthorizedPage', () => {
 
   it('shows contact information', () => {
     render(<UnauthorizedPage />);
-    expect(screen.getByText(/winbit\.cfds@gmail\.com/)).toBeInTheDocument();
+    expect(screen.getByText(/contacto@winbit.com.ar/)).toBeInTheDocument();
   });
 
   it('calls logout when button is clicked', async () => {

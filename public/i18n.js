@@ -45,40 +45,74 @@ const translations = {
       'Acceso individual con actualización diaria del saldo, resultado acumulado y estado de la cuenta en tiempo operativo.',
     transparenciaClosing:
       'Todas las operaciones y movimientos se encuentran documentados, permitiendo un seguimiento claro y trazable del capital a través de reportes, nuestro registro histórico y un acceso personalizado.',
+    trayectoriaTitle: 'Trayectoria',
+    trayectoriaDesc:
+      'Más de 6 años en mercados financieros internacionales; más de 4 con la operatoria actual de futuros.',
+    custodiaTitle: 'Custodia del capital',
+    custodiaDesc:
+      'El capital está denominado en USD y se custodia en entidades bancarias del exterior, bajo marcos de alto resguardo patrimonial.',
 
     // Resultados históricos
     resultadosTitle: 'Resultados históricos',
     resultadosTitleLine1: 'Resultados',
     resultadosTitleLine2: 'históricos',
     resultadosSubtitle: 'Rendimientos anuales en USD, netos de comisiones del servicio.',
+    resultadosAcumLabel: 'acumulado neto jun 2022 – sep 2026',
+    resultadosPromedioLabel: 'promedio anual neto 2023–2025',
+    resultadosMensualLabel: 'media mensual neta',
+    resultadosMesesLabel: 'de 52 meses con resultado positivo',
     resultadosDisclaimer:
-      'Resultados históricos. No constituyen promesa ni garantía de rendimientos futuros. Todos los rendimientos se muestran netos de comisiones del servicio de Winbit.',
+      'Rendimientos netos de comisiones, Cuenta Inversor (30%). 2022 desde junio; 2026 hasta septiembre. Resultados históricos. No garantizan resultados futuros.',
+    ctaQuieroInvertir: 'Quiero invertir',
+    ctaWhatsApp: 'Hacé tu consulta por WhatsApp',
+
+    // Inversión
+    chipSinMinimo: 'Sin monto mínimo de ingreso',
+    chipSinCosto: 'Sin costo de depósitos ni retiros',
+    ingresoTitle: 'Ingreso de capital',
+    ingresoDesc:
+      'El capital puede ingresarse en ARS, USD, USDT, USDC o mediante transferencias bancarias internacionales bajo estándares SWIFT e IBAN. Todos los aportes son acreditados bajo denominación en USD dentro de la estructura operativa.',
+    comisionTitle: 'Comisión del servicio',
+    comisionIntro:
+      'La comisión depende del tamaño de la cuenta y se calcula solo sobre la nueva rentabilidad positiva.',
+    cuentaInversor: 'Cuenta Inversor',
+    cuentaInversorRango: 'Hasta USD 25.000',
+    cuentaCore: 'Cuenta Core',
+    cuentaCoreRango: 'De USD 25.000 a 50.000',
+    cuentaGold: 'Cuenta Gold',
+    cuentaGoldRango: 'Más de USD 50.000',
+    cuentaNota: 'sobre la nueva rentabilidad positiva',
+    comisionFootnote:
+      'La comisión se liquida trimestralmente o al realizar un retiro. Solo se cobra sobre rentabilidad nueva: si no hay ganancia en el período, no se cobra.',
 
     // Preguntas
     preguntasTitle: 'Preguntas',
     faq1Q: '¿En qué mercados operan?',
     faq1A:
-      'Operamos en el Chicago Mercantile Exchange (CME), el principal mercado de futuros de Estados Unidos. La operatoria se realiza durante la sesión estadounidense, con ejecución directa en el mercado (sin intermediarios).',
+      'Operamos en el Chicago Mercantile Exchange (CME), el principal mercado de futuros de Estados Unidos. La operatoria se realiza durante la sesión estadounidense. Ejecución directa en el CME (Chicago Mercantile Exchange).',
     faq2Q: '¿Cómo funcionan los depósitos?',
     faq2A:
-      'Los depósitos se realizan mediante métodos acordados previamente, incluso pueden ser autogestionados desde la aplicación. Una vez confirmado, el capital queda operativo.',
+      'Podés depositar mediante métodos acordados previamente, e incluso autogestionar el depósito desde la aplicación. Una vez confirmado, el capital queda operativo.',
     faq3Q: '¿Cómo solicito un retiro?',
     faq3A:
-      'Los retiros pueden solicitarse directamente desde la aplicación privada del inversor. Las solicitudes se procesan habitualmente dentro de 24 horas hábiles, con confirmación documental del intercambio.',
+      'Podés solicitar tus retiros directamente desde tu aplicación privada. Las solicitudes se procesan habitualmente dentro de 24 horas hábiles, con confirmación documental del intercambio.',
     faq4Q: '¿Cómo puedo hacer seguimiento de mi inversión?',
     faq4A:
-      'Cada usuario puede visualizar la evolución de su inversión desde una plataforma privada, donde puede ver su saldo actualizado, consultar el historial de movimientos, seguir la evolución de su cuenta y gestionar ingresos o retiros.',
+      'Desde tu plataforma privada podés ver tu saldo actualizado, consultar el historial de movimientos, seguir la evolución de tu cuenta y gestionar ingresos o retiros.',
     faq5Q: '¿Cuáles son los riesgos de invertir?',
     faq5A:
-      'La operatoria en futuros implica riesgo de pérdida de capital. No garantizamos resultados. Cada inversor debe evaluar su tolerancia al riesgo.',
+      'La operatoria en futuros implica riesgo de pérdida de capital. No garantizamos resultados. Te recomendamos evaluar tu tolerancia al riesgo antes de invertir.',
     faq6Q: '¿Cómo me comunico con Winbit?',
     faq6A:
-      'Puede contactarnos por correo electrónico o WhatsApp. Respondemos dentro de las 24 horas hábiles.',
+      'Podés contactarnos por correo electrónico o WhatsApp. Respondemos dentro de las 24 horas hábiles.',
+    faq7Q: '¿Cuánto cuesta el servicio?',
+    faq7A:
+      'No hay monto mínimo de ingreso ni costo de depósitos o retiros. Winbit cobra una comisión sobre la nueva rentabilidad positiva: 30% en Cuenta Inversor (hasta USD 25.000), 25% en Cuenta Core (USD 25.000 a 50.000) y 20% en Cuenta Gold (más de USD 50.000). Se liquida trimestralmente o al realizar un retiro; si no hay ganancia en el período, no se cobra.',
 
     // Contacto
     contactoTitle: 'Contacto',
     contactoEmailLabel: 'Correo electrónico',
-    contactoEmail: 'winbit.cfds@gmail.com',
+    contactoEmail: 'contacto@winbit.com.ar',
     contactoWhatsAppLabel: 'WhatsApp de atención directa',
     contactoWhatsApp: '+54 9 11 4178-3126',
 
@@ -135,23 +169,54 @@ const translations = {
       'Individual access with daily balance updates, cumulative results, and account status in operational time.',
     transparenciaClosing:
       'We prioritize clarity, traceability, and professional accountability in every aspect of our operation.',
+    trayectoriaTitle: 'Track record',
+    trayectoriaDesc:
+      'Over 6 years in international financial markets; over 4 with the current futures strategy.',
+    custodiaTitle: 'Capital custody',
+    custodiaDesc:
+      'Capital is denominated in USD and held in custody at banking institutions abroad, under high-level asset protection frameworks.',
 
     // Resultados históricos
     resultadosTitle: 'Historical returns',
     resultadosTitleLine1: 'Historical',
     resultadosTitleLine2: 'returns',
     resultadosSubtitle: 'Annual returns in USD, net of service fees.',
+    resultadosAcumLabel: 'cumulative net, Jun 2022 – Sep 2026',
+    resultadosPromedioLabel: 'net annual average 2023–2025',
+    resultadosMensualLabel: 'net monthly average',
+    resultadosMesesLabel: 'of 52 months with a positive result',
     resultadosDisclaimer:
-      'Historical results. They do not constitute a promise or guarantee of future returns. All returns are shown net of Winbit service fees.',
+      'Returns net of fees, Investor Account (30%). 2022 from June; 2026 through September. Historical results. They do not guarantee future results.',
+    ctaQuieroInvertir: 'I want to invest',
+    ctaWhatsApp: 'Ask us on WhatsApp',
+
+    // Inversión
+    chipSinMinimo: 'No minimum deposit',
+    chipSinCosto: 'No cost for deposits or withdrawals',
+    ingresoTitle: 'Capital deposits',
+    ingresoDesc:
+      'Capital can be deposited in ARS, USD, USDT, USDC or through international bank transfers under SWIFT and IBAN standards. All contributions are credited in USD within the operating structure.',
+    comisionTitle: 'Service fee',
+    comisionIntro:
+      'The fee depends on the account size and is calculated only on new positive returns.',
+    cuentaInversor: 'Investor Account',
+    cuentaInversorRango: 'Up to USD 25,000',
+    cuentaCore: 'Core Account',
+    cuentaCoreRango: 'USD 25,000 to 50,000',
+    cuentaGold: 'Gold Account',
+    cuentaGoldRango: 'Over USD 50,000',
+    cuentaNota: 'on new positive returns',
+    comisionFootnote:
+      'The fee is settled quarterly or upon a withdrawal. It is charged only on new returns: if there is no gain in the period, no fee is charged.',
 
     // Preguntas
     preguntasTitle: 'FAQ',
     faq1Q: 'What markets do you operate in?',
     faq1A:
-      'We operate on the Chicago Mercantile Exchange (CME), the leading futures market in the United States. Trading takes place during the US session, with direct execution on the exchange.',
+      'We operate on the Chicago Mercantile Exchange (CME), the leading futures market in the United States. Trading takes place during the US session. Direct execution on the CME (Chicago Mercantile Exchange).',
     faq2Q: 'How do deposits work?',
     faq2A:
-      'Deposits are made via bank transfer or previously agreed methods. Once confirmed, the capital is available for trading.',
+      'You can deposit through previously agreed methods, and even self-manage the deposit from the app. Once confirmed, the capital is available for trading.',
     faq3Q: 'How do I request a withdrawal?',
     faq3A:
       "Withdrawals can be requested directly from the investor's private application. Requests are typically processed within 24 business hours, with documentary confirmation.",
@@ -163,11 +228,14 @@ const translations = {
       'Futures trading involves risk of capital loss. We do not guarantee results. Each investor should assess their risk tolerance.',
     faq6Q: 'How do I contact Winbit?',
     faq6A: 'You can contact us by email or WhatsApp. We respond within 24 business hours.',
+    faq7Q: 'How much does the service cost?',
+    faq7A:
+      'There is no minimum deposit and no cost for deposits or withdrawals. Winbit charges a fee on new positive returns: 30% on the Investor Account (up to USD 25,000), 25% on the Core Account (USD 25,000 to 50,000) and 20% on the Gold Account (over USD 50,000). It is settled quarterly or upon a withdrawal; if there is no gain in the period, no fee is charged.',
 
     // Contacto
     contactoTitle: 'Contact',
     contactoEmailLabel: 'Email',
-    contactoEmail: 'winbit.cfds@gmail.com',
+    contactoEmail: 'contacto@winbit.com.ar',
     contactoWhatsAppLabel: 'Direct support WhatsApp',
     contactoWhatsApp: '+54 9 11 4178-3126',
 

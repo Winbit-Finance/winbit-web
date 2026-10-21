@@ -108,7 +108,7 @@ img {
 }
 
 .section {
-  padding: var(--spacing-2xl) 0;
+  padding: clamp(4.5rem, 9vw, 6.5rem) 0;
 }
 
 /* ==================== Ambientes de marca ==================== */
@@ -133,24 +133,35 @@ img {
   overflow: hidden;
 }
 
-/* Proceso y Transparencia comparten el mismo gráfico generado. Recorte: la
-   imagen fuente trae un segundo grupo de puntos suelto abajo a la
-   izquierda que no queremos mostrar, así que se hace zoom sobre el recorte
-   de la esquina superior derecha únicamente. */
-#proceso::before {
+/* Marca de agua: el isotipo de Winbit, grande, muy tenue y recortado por el
+   borde inferior derecho. Mismo recurso en Proceso, Transparencia y
+   Preguntas (reemplaza las velitas decorativas de las esquinas). */
+#proceso::before,
+#transparencia::before,
+#preguntas::before {
   content: '';
   position: absolute;
-  right: 0;
-  bottom: 0;
+  right: -6%;
+  bottom: -9%;
   z-index: 0;
   pointer-events: none;
-  width: min(336px, 32%);
-  aspect-ratio: 807 / 972;
-  background-image: url('assets/proceso-chart-bg.webp');
+  width: min(560px, 52%);
+  aspect-ratio: 223 / 179;
+  background-image: url('assets/isotipo-winbit.png');
   background-repeat: no-repeat;
-  background-position: right top;
-  background-size: 179.4% 111.7%;
-  opacity: 0.8;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.05;
+}
+
+@media (max-width: 767px) {
+  #proceso::before,
+  #transparencia::before,
+  #preguntas::before {
+    width: min(320px, 78%);
+    right: -14%;
+    bottom: -4%;
+  }
 }
 
 /* La descripción de "Seguimiento de resultados" (última card) cae sobre
@@ -168,102 +179,6 @@ img {
    a despegarlo del todo en las zonas más oscuras de las velas). */
 #proceso .step-card:last-child .step-desc {
   max-width: 640px;
-}
-
-/* Transparencia: gráfico propio (más detallado), separado del de Proceso. */
-/* Recorte en dos partes: la imagen fuente trae un grupo principal (derecha,
-   casi toda la altura) y uno secundario suelto abajo a la izquierda — se
-   recortan por separado para que cada uno quede en su esquina real. */
-/* Invertida verticalmente: las velas quedan apuntando hacia abajo, y el
-   borde recortado (que antes quedaba "cortado" abajo) pasa a estar pegado
-   al margen superior de la sección, para que se vea como una esquina. */
-#transparencia::before {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 0;
-  pointer-events: none;
-  width: min(393px, 34%);
-  aspect-ratio: 738 / 816;
-  background-image: url('assets/transparencia-chart-bg.webp');
-  background-repeat: no-repeat;
-  background-position: right top;
-  background-size: 196.2% 133.1%;
-  opacity: 0.85;
-  transform: scaleY(-1);
-}
-
-#transparencia::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  z-index: 0;
-  pointer-events: none;
-  width: min(302px, 30%);
-  aspect-ratio: 462 / 375;
-  background-image: url('assets/transparencia-chart-bg.webp');
-  background-repeat: no-repeat;
-  background-position: left bottom;
-  background-size: 313.4% 289.6%;
-  opacity: 0.85;
-}
-
-@media (max-width: 767px) {
-  #transparencia::before {
-    width: min(143px, 48%);
-  }
-
-  #transparencia::after {
-    width: min(136px, 38%);
-  }
-}
-
-/* Preguntas: formas difuminadas generadas, muy sutiles. La imagen fuente
-   trae dos grupos separados (uno arriba a la derecha, otro abajo a la
-   izquierda) — se recorta cada uno por separado con zoom, en vez de mostrar
-   la imagen completa, para que cada grupo quede en su esquina. */
-#preguntas::before {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 0;
-  pointer-events: none;
-  width: min(420px, 42%);
-  aspect-ratio: 556 / 684;
-  background-image: url('assets/preguntas-shapes-bg.webp');
-  background-repeat: no-repeat;
-  background-position: right top;
-  background-size: 300.7% 137.6%;
-  opacity: 0.6;
-}
-
-#preguntas::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  z-index: 0;
-  pointer-events: none;
-  width: min(260px, 32%);
-  aspect-ratio: 532 / 592;
-  background-image: url('assets/preguntas-shapes-bg.webp');
-  background-repeat: no-repeat;
-  background-position: left bottom;
-  background-size: 314.3% 159%;
-  opacity: 0.6;
-}
-
-@media (max-width: 767px) {
-  #preguntas::before {
-    width: min(180px, 45%);
-  }
-
-  #preguntas::after {
-    width: min(130px, 35%);
-  }
 }
 
 #proceso .container,
@@ -335,12 +250,8 @@ img {
   text-shadow: none;
 }
 
-.section-cream .inversor-tooltip-trigger {
-  color: var(--wb-green);
-}
-
 .section-header {
-  margin-bottom: var(--spacing-2xl);
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
   opacity: 0;
   transition:
     opacity 0.8s cubic-bezier(0.215, 0.61, 0.355, 1),
@@ -986,83 +897,144 @@ img {
   grid-template-columns: 1fr;
 }
 
-/* ComisiÃ³n card â€” centered, spans 2 columns on desktop */
-.comision-card {
+/* Comisión por tipo de cuenta: encabezado + 3 tarjetas + nota de liquidación */
+.comision-block {
+  max-width: 980px;
+  margin: var(--spacing-lg) auto 0;
+}
+
+.comision-head {
   max-width: 600px;
-  margin: var(--spacing-md) auto 0;
+  margin: 0 auto;
+  border-bottom: none;
 }
 
-/* Inversor(*) tooltip trigger */
-.inversor-tooltip-trigger {
-  color: var(--color-accent);
-  opacity: 0.85;
-  cursor: pointer;
-  position: relative;
-  transition: opacity var(--transition-fast);
-  text-decoration: none;
+.account-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: var(--spacing-sm);
 }
 
-.inversor-tooltip-trigger:hover {
-  opacity: 1;
+@media (min-width: 768px) {
+  .account-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
 }
 
-.inversor-asterisk {
-  font-size: 0.75em;
-  vertical-align: baseline;
-}
-
-/* Tooltip â€” se muestra por ENCIMA del trigger, fuera de la card */
-.inversor-tooltip {
-  display: none;
-  position: fixed; /* fixed escapa cualquier overflow del padre */
-  background: var(--wb-carbon-soft);
-  border: 1px solid var(--color-border-accent);
+.account-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
+  padding: 24px 18px 22px;
+  border: 1px solid rgba(236, 228, 213, 0.14);
   border-radius: 10px;
-  padding: 16px 20px;
-  min-width: 240px;
-  font-size: 0.88rem;
-  color: var(--color-text-muted);
-  line-height: 1.8;
-  z-index: 9999; /* por encima de todo */
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.7);
-  text-decoration: none;
-  text-align: left;
-  white-space: nowrap;
-  pointer-events: none;
+  background: rgba(13, 15, 14, 0.72);
+  transition:
+    transform var(--transition-base),
+    border-color var(--transition-base);
 }
 
-/* Flechita apuntando hacia abajo (el tooltip abre arriba) */
-.inversor-tooltip::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  border: 7px solid transparent;
-  border-top-color: var(--color-border-accent);
+.account-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-border-accent);
 }
 
-.inversor-tooltip-trigger.active .inversor-tooltip {
-  display: block;
-}
-/* Cuando el tooltip abre hacia abajo, la flecha apunta hacia arriba */
-.inversor-tooltip.tooltip-below::after {
-  top: auto;
-  bottom: 100%;
-  border-top-color: transparent;
-  border-bottom-color: var(--color-border-accent);
-}
-
-/* JerarquÃ­a de color dentro del tooltip */
-/* Nombres de categorÃ­as: Inversor, Core, Gold â†’ blanco */
-.inversor-tooltip .tip-cat {
-  color: var(--color-white);
+.account-name {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
   font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--wb-green-2);
 }
-/* Montos â†’ gris suave (texto secundario) */
-.inversor-tooltip .tip-amount {
-  color: rgba(255, 255, 255, 0.55);
-  font-weight: 400;
+
+.account-range {
+  font-size: 0.85rem;
+  color: rgba(236, 228, 213, 0.68);
+}
+
+.account-fee {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 6vw, 3.6rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--wb-green-2);
+  margin-top: 6px;
+}
+
+.account-note {
+  font-size: 0.78rem;
+  color: rgba(236, 228, 213, 0.6);
+}
+
+.comision-footnote {
+  max-width: 720px;
+  margin: var(--spacing-md) auto 0;
+  text-align: center;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: rgba(236, 228, 213, 0.72);
+  text-shadow:
+    0 0 6px rgba(13, 15, 14, 0.85),
+    0 0 3px rgba(13, 15, 14, 0.9);
+}
+
+/* Chips destacados: sin monto mínimo / sin costo de depósitos ni retiros */
+.benefit-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin: 0 auto var(--spacing-lg);
+}
+
+.benefit-chip {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--wb-cream);
+  padding: 9px 18px;
+  border: 1px solid var(--color-border-accent);
+  border-radius: 999px;
+  background: rgba(71, 151, 133, 0.12);
+}
+
+.benefit-chip::before {
+  content: '\2713';
+  color: var(--wb-green-2);
+  margin-right: 8px;
+  font-weight: 700;
+}
+
+/* CTA intermedio (WhatsApp) al final de Resultados y Transparencia */
+.section-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--spacing-lg);
+}
+
+.section-cta .cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  white-space: normal;
+  text-align: center;
+}
+
+.section-cta .cta-solid::after {
+  content: '\2192';
+  margin-left: 12px;
+  font-size: 0.9rem;
+  transition: transform var(--transition-fast);
+}
+
+.section-cta .cta-solid:hover::after {
+  transform: translateX(3px);
 }
 
 .step-card {
@@ -1314,6 +1286,17 @@ img {
   text-align: left;
 }
 
+@media (min-width: 768px) {
+  .transparency-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px 48px;
+  }
+
+  .transparency-grid .transparency-item:nth-last-child(2) {
+    border-bottom: none;
+  }
+}
+
 .transparency-item {
   display: flex;
   align-items: flex-start;
@@ -1392,7 +1375,7 @@ img {
 /* ==================== Resultados HistÃ³ricos ==================== */
 
 /* Panel resumen decorativo, con las cifras ya aprobadas en la guÃ­a de
-   marca (160% acumulado / 2% promedio mensual). Puramente visual, no
+   marca (135,4% acumulado / ≈20% promedio anual / ≈1,7% media mensual). Puramente visual, no
    reemplaza ni modifica la grilla de resultados animada de abajo. */
 .results-summary {
   position: relative;
@@ -1443,6 +1426,21 @@ img {
   text-fill-color: transparent;
 }
 
+/* Segunda fila del panel: media mensual y meses positivos, más chicos */
+.results-summary-stats--secondary {
+  margin-top: 26px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(236, 228, 213, 0.1);
+}
+
+.results-summary-stats--secondary .results-summary-value {
+  font-size: clamp(2.4rem, 5vw, 56px);
+}
+
+.results-summary-stats--secondary .results-summary-sep {
+  height: 52px;
+}
+
 .results-summary-label {
   font-size: 0.68rem;
   letter-spacing: 0.03em;
@@ -1490,13 +1488,12 @@ img {
 
 @media (min-width: 768px) {
   .results-grid {
-    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(
-        0,
-        1fr
-      );
+    grid-template-columns:
+      minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr) auto
+      minmax(0, 1fr);
     gap: 0;
     width: 100%;
-    max-width: 900px;
+    max-width: 1040px;
     margin: 1.2rem auto 2rem;
     justify-content: center;
   }
@@ -1508,11 +1505,18 @@ img {
     background: rgba(255, 255, 255, 0.08);
     align-self: center;
     transition: background var(--transition-base);
-    margin: 0 clamp(14px, 4vw, 56px);
+    margin: 0 clamp(8px, 2vw, 28px);
   }
 
   .results-grid > * {
     justify-self: center;
+  }
+}
+
+/* Mobile: 5 cards en 2 columnas, la última (2026) centrada en su propia fila */
+@media (max-width: 767px) {
+  .results-grid .result-card:last-child {
+    grid-column: 1 / -1;
   }
 }
 
@@ -1554,7 +1558,7 @@ img {
 
 .result-pct {
   font-family: var(--font-display);
-  font-size: clamp(2.6rem, 6.5vw, 82px);
+  font-size: clamp(2.6rem, 5.2vw, 64px);
   font-weight: 600;
   color: var(--color-white);
   letter-spacing: -0.02em;
@@ -1576,7 +1580,7 @@ img {
 
 .pct-sign {
   font-family: var(--font-display);
-  font-size: 34px;
+  font-size: clamp(20px, 2.6vw, 30px);
   font-weight: 600;
   margin-left: 3px;
   vertical-align: super;
@@ -1655,7 +1659,7 @@ img {
 }
 
 .faq-item.active .faq-answer {
-  max-height: 200px;
+  max-height: 320px;
   padding-bottom: var(--spacing-md);
 }
 
