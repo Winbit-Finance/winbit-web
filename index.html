@@ -17,7 +17,7 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Condensed:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=26" />
+    <link rel="stylesheet" href="styles.css?v=27" />
   </head>
 
   <body>
@@ -242,6 +242,10 @@
               Estructura diseñada para permitir flexibilidad y acceso permanente al capital.
             </p>
           </header>
+          <ul class="benefit-chips">
+            <li class="benefit-chip" data-i18n="chipSinMinimo">Sin monto mínimo de ingreso</li>
+            <li class="benefit-chip" data-i18n="chipSinCosto">Sin costo de depósitos ni retiros</li>
+          </ul>
           <div class="steps-grid">
             <div class="step-card">
               <span class="step-icon" aria-hidden="true"
@@ -261,11 +265,13 @@
                   <path d="M2 21h20" /></svg
               ></span>
               <div class="step-body">
-                <h3 class="step-title step-title-accent">Ingreso de capital</h3>
-                <p class="step-desc">
-                  El capital puede ingresarse en ARS, USD, USDT o mediante transferencias bancarias
-                  internacionales bajo estándares SWIFT e IBAN. Todos los aportes son acreditados
-                  bajo denominación en USD dentro de la estructura operativa.
+                <h3 class="step-title step-title-accent" data-i18n="ingresoTitle">
+                  Ingreso de capital
+                </h3>
+                <p class="step-desc" data-i18n="ingresoDesc">
+                  El capital puede ingresarse en ARS, USD, USDT, USDC o mediante transferencias
+                  bancarias internacionales bajo estándares SWIFT e IBAN. Todos los aportes son
+                  acreditados bajo denominación en USD dentro de la estructura operativa.
                 </p>
               </div>
             </div>
@@ -341,8 +347,8 @@
               </div>
             </div>
           </div>
-          <div class="comision-card">
-            <div class="step-card">
+          <div class="comision-block">
+            <div class="step-card comision-head">
               <span class="step-icon" aria-hidden="true"
                 ><svg
                   viewBox="0 0 24 24"
@@ -357,16 +363,45 @@
                   <circle cx="17.5" cy="17.5" r="2.5" /></svg
               ></span>
               <div class="step-body">
-                <h3 class="step-title step-title-accent">Comisión del servicio</h3>
-                <p class="step-desc">
-                  Se aplica una comisión del 30&nbsp;% sobre la rentabilidad generada en el período.
-                  La liquidación se realiza de forma trimestral. Aplicable a cuentas
-                  <span class="inversor-tooltip-trigger" id="inversor-trigger"
-                    >Inversor <span class="inversor-asterisk">(*)</span></span
-                  >.
+                <h3 class="step-title step-title-accent" data-i18n="comisionTitle">
+                  Comisión del servicio
+                </h3>
+                <p class="step-desc" data-i18n="comisionIntro">
+                  La comisión depende del tamaño de la cuenta y se calcula solo sobre la nueva
+                  rentabilidad positiva.
                 </p>
               </div>
             </div>
+            <div class="account-grid">
+              <article class="account-card">
+                <h4 class="account-name" data-i18n="cuentaInversor">Cuenta Inversor</h4>
+                <p class="account-range" data-i18n="cuentaInversorRango">Hasta USD 25.000</p>
+                <p class="account-fee">30%</p>
+                <p class="account-note" data-i18n="cuentaNota">
+                  sobre la nueva rentabilidad positiva
+                </p>
+              </article>
+              <article class="account-card">
+                <h4 class="account-name" data-i18n="cuentaCore">Cuenta Core</h4>
+                <p class="account-range" data-i18n="cuentaCoreRango">De USD 25.000 a 50.000</p>
+                <p class="account-fee">25%</p>
+                <p class="account-note" data-i18n="cuentaNota">
+                  sobre la nueva rentabilidad positiva
+                </p>
+              </article>
+              <article class="account-card">
+                <h4 class="account-name" data-i18n="cuentaGold">Cuenta Gold</h4>
+                <p class="account-range" data-i18n="cuentaGoldRango">Más de USD 50.000</p>
+                <p class="account-fee">20%</p>
+                <p class="account-note" data-i18n="cuentaNota">
+                  sobre la nueva rentabilidad positiva
+                </p>
+              </article>
+            </div>
+            <p class="comision-footnote" data-i18n="comisionFootnote">
+              La comisión se liquida trimestralmente o al realizar un retiro. Solo se cobra sobre
+              rentabilidad nueva: si no hay ganancia en el período, no se cobra.
+            </p>
           </div>
         </div>
         <div class="investment-tagline" aria-hidden="true">
@@ -473,12 +508,70 @@
                   </p>
                 </div>
               </div>
+              <div class="transparency-item">
+                <span class="step-icon" aria-hidden="true"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M3 12h18" />
+                    <path
+                      d="M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9s1.3-6.4 3.8-9z"
+                    /></svg
+                ></span>
+                <div class="transparency-body">
+                  <h3 class="transparency-item-title" data-i18n="trayectoriaTitle">Trayectoria</h3>
+                  <p class="transparency-item-desc" data-i18n="trayectoriaDesc">
+                    Más de 6 años en mercados financieros internacionales; más de 4 con la
+                    operatoria actual de futuros.
+                  </p>
+                </div>
+              </div>
+              <div class="transparency-item">
+                <span class="step-icon" aria-hidden="true"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <rect x="5" y="11" width="14" height="9" rx="2" />
+                    <path d="M8 11V8a4 4 0 0 1 8 0v3" />
+                    <path d="M12 15v2" /></svg
+                ></span>
+                <div class="transparency-body">
+                  <h3 class="transparency-item-title" data-i18n="custodiaTitle">
+                    Custodia del capital
+                  </h3>
+                  <p class="transparency-item-desc" data-i18n="custodiaDesc">
+                    El capital está denominado en USD y se custodia en entidades bancarias del
+                    exterior, bajo marcos de alto resguardo patrimonial.
+                  </p>
+                </div>
+              </div>
             </div>
             <p class="transparency-closing">
               Todas las operaciones y movimientos se encuentran documentados, permitiendo un
               seguimiento claro y trazable del capital a través de reportes, nuestro registro
               histórico y un acceso personalizado.
             </p>
+            <div class="section-cta">
+              <a
+                href="https://wa.me/5491141783126"
+                class="cta-btn cta-solid"
+                target="_blank"
+                rel="noopener"
+                data-i18n="ctaWhatsApp"
+                >Hacé tu consulta por WhatsApp</a
+              >
+            </div>
           </div>
         </div>
       </section>
@@ -504,63 +597,106 @@
               <div class="results-summary-stat">
                 <span
                   class="results-summary-value"
-                  data-target="160"
+                  data-target="135.4"
+                  data-decimals="1"
                   data-prefix="+"
                   data-suffix="%"
                   data-duration="2600"
-                  >+160%</span
+                  >+135,4%</span
                 >
-                <span class="results-summary-label">acumulado jun 2022 – jun 2026</span>
+                <span class="results-summary-label" data-i18n="resultadosAcumLabel"
+                  >acumulado neto jun 2022 – sep 2026</span
+                >
               </div>
               <span class="results-summary-sep"></span>
               <div class="results-summary-stat">
                 <span
                   class="results-summary-value"
-                  data-target="23"
-                  data-prefix="+"
+                  data-target="20"
+                  data-prefix="≈"
                   data-suffix="%"
                   data-duration="1800"
-                  >+23%</span
+                  >≈20%</span
                 >
-                <span class="results-summary-label"
-                  >media histórica de rendimientos período años 2022-2025</span
+                <span class="results-summary-label" data-i18n="resultadosPromedioLabel"
+                  >promedio anual neto 2023–2025</span
+                >
+              </div>
+            </div>
+            <div class="results-summary-stats results-summary-stats--secondary">
+              <div class="results-summary-stat">
+                <span
+                  class="results-summary-value"
+                  data-target="1.7"
+                  data-decimals="1"
+                  data-prefix="≈"
+                  data-suffix="%"
+                  data-duration="1600"
+                  >≈1,7%</span
+                >
+                <span class="results-summary-label" data-i18n="resultadosMensualLabel"
+                  >media mensual neta</span
+                >
+              </div>
+              <span class="results-summary-sep"></span>
+              <div class="results-summary-stat">
+                <span class="results-summary-value" data-target="42" data-duration="1600">42</span>
+                <span class="results-summary-label" data-i18n="resultadosMesesLabel"
+                  >de 52 meses con resultado positivo</span
                 >
               </div>
             </div>
           </div>
           <div class="results-grid">
             <div class="result-card">
-              <span class="result-pct" data-value="32.4"
-                ><span class="result-num">32,4</span><span class="pct-sign">%</span></span
+              <span class="result-pct" data-value="28.0"
+                ><span class="result-num">28,0</span><span class="pct-sign">%</span></span
               >
               <span class="result-year">2022</span>
             </div>
             <span class="result-divider"></span>
             <div class="result-card">
-              <span class="result-pct" data-value="24.7"
-                ><span class="result-num">24,7</span><span class="pct-sign">%</span></span
+              <span class="result-pct" data-value="20.2"
+                ><span class="result-num">20,2</span><span class="pct-sign">%</span></span
               >
               <span class="result-year">2023</span>
             </div>
             <span class="result-divider"></span>
             <div class="result-card">
-              <span class="result-pct" data-value="26.8"
-                ><span class="result-num">26,8</span><span class="pct-sign">%</span></span
+              <span class="result-pct" data-value="22.9"
+                ><span class="result-num">22,9</span><span class="pct-sign">%</span></span
               >
               <span class="result-year">2024</span>
             </div>
             <span class="result-divider"></span>
             <div class="result-card">
-              <span class="result-pct" data-value="16.6"
-                ><span class="result-num">16,6</span><span class="pct-sign">%</span></span
+              <span class="result-pct" data-value="16.5"
+                ><span class="result-num">16,5</span><span class="pct-sign">%</span></span
               >
               <span class="result-year">2025</span>
             </div>
+            <span class="result-divider"></span>
+            <div class="result-card">
+              <span class="result-pct" data-value="6.8"
+                ><span class="result-num">6,8</span><span class="pct-sign">%</span></span
+              >
+              <span class="result-year">2026</span>
+            </div>
           </div>
           <p class="results-disclaimer" data-i18n="resultadosDisclaimer">
-            Resultados históricos. No constituyen promesa ni garantía de rendimientos futuros. Todos
-            los rendimientos se muestran netos de comisiones del servicio de Winbit.
+            Rendimientos netos de comisiones, Cuenta Inversor (30%). 2022 desde junio; 2026 hasta
+            septiembre. Resultados históricos. No garantizan resultados futuros.
           </p>
+          <div class="section-cta">
+            <a
+              href="https://wa.me/5491141783126"
+              class="cta-btn cta-solid"
+              target="_blank"
+              rel="noopener"
+              data-i18n="ctaQuieroInvertir"
+              >Quiero invertir</a
+            >
+          </div>
         </div>
       </section>
 
@@ -587,8 +723,8 @@
               <div class="faq-answer">
                 <p data-i18n="faq1A">
                   Operamos en el Chicago Mercantile Exchange (CME), el principal mercado de futuros
-                  de Estados Unidos. La operatoria se realiza durante la sesión estadounidense, con
-                  ejecución directa en el mercado (sin intermediarios).
+                  de Estados Unidos. La operatoria se realiza durante la sesión estadounidense.
+                  Ejecución directa en el CME (Chicago Mercantile Exchange).
                 </p>
               </div>
             </div>
@@ -607,9 +743,8 @@
               </button>
               <div class="faq-answer">
                 <p data-i18n="faq2A">
-                  Los depósitos se realizan mediante métodos acordados previamente, incluso pueden
-                  ser autogestionados desde la aplicación. Una vez confirmado, el capital queda
-                  operativo.
+                  Podés depositar mediante métodos acordados previamente, e incluso autogestionar el
+                  depósito desde la aplicación. Una vez confirmado, el capital queda operativo.
                 </p>
               </div>
             </div>
@@ -628,9 +763,9 @@
               </button>
               <div class="faq-answer">
                 <p data-i18n="faq3A">
-                  Los retiros pueden solicitarse directamente desde la aplicación privada del
-                  inversor. Las solicitudes se procesan habitualmente dentro de 24 horas hábiles,
-                  con confirmación documental del intercambio.
+                  Podés solicitar tus retiros directamente desde tu aplicación privada. Las
+                  solicitudes se procesan habitualmente dentro de 24 horas hábiles, con confirmación
+                  documental del intercambio.
                 </p>
               </div>
             </div>
@@ -649,9 +784,8 @@
               </button>
               <div class="faq-answer">
                 <p data-i18n="faq4A">
-                  Cada usuario puede visualizar la evolución de su inversión desde una plataforma
-                  privada, donde puede ver su saldo actualizado, consultar el historial de
-                  movimientos, seguir la evolución de su cuenta y gestionar ingresos o retiros.
+                  Desde tu plataforma privada podés ver tu saldo actualizado, consultar el historial
+                  de movimientos, seguir la evolución de tu cuenta y gestionar ingresos o retiros.
                 </p>
               </div>
             </div>
@@ -671,7 +805,30 @@
               <div class="faq-answer">
                 <p data-i18n="faq5A">
                   La operatoria en futuros implica riesgo de pérdida de capital. No garantizamos
-                  resultados. Cada inversor debe evaluar su tolerancia al riesgo.
+                  resultados. Te recomendamos evaluar tu tolerancia al riesgo antes de invertir.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">
+                <span data-i18n="faq7Q">¿Cuánto cuesta el servicio?</span>
+                <svg
+                  class="faq-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </button>
+              <div class="faq-answer">
+                <p data-i18n="faq7A">
+                  No hay monto mínimo de ingreso ni costo de depósitos o retiros. Winbit cobra una
+                  comisión sobre la nueva rentabilidad positiva: 30% en Cuenta Inversor (hasta USD
+                  25.000), 25% en Cuenta Core (USD 25.000 a 50.000) y 20% en Cuenta Gold (más de USD
+                  50.000). Se liquida trimestralmente o al realizar un retiro; si no hay ganancia en
+                  el período, no se cobra.
                 </p>
               </div>
             </div>
@@ -690,7 +847,7 @@
               </button>
               <div class="faq-answer">
                 <p data-i18n="faq6A">
-                  Puede contactarnos por correo electrónico o WhatsApp. Respondemos dentro de las 24
+                  Podés contactarnos por correo electrónico o WhatsApp. Respondemos dentro de las 24
                   horas hábiles.
                 </p>
               </div>
@@ -713,7 +870,7 @@
           </header>
           <div class="contact-content">
             <div class="contact-methods">
-              <a href="mailto:winbit.cfds@gmail.com" class="contact-item contact-item--mail">
+              <a href="mailto:contacto@winbit.com.ar" class="contact-item contact-item--mail">
                 <span class="contact-icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                     <rect x="3.5" y="5.5" width="17" height="13" rx="3" />
@@ -726,7 +883,9 @@
                   <span class="contact-label" data-i18n="contactoEmailLabel"
                     >Correo electrónico</span
                   >
-                  <span class="contact-value" data-i18n="contactoEmail">winbit.cfds@gmail.com</span>
+                  <span class="contact-value" data-i18n="contactoEmail"
+                    >contacto@winbit.com.ar</span
+                  >
                 </span>
                 <span class="contact-underline" aria-hidden="true"></span>
               </a>
@@ -761,13 +920,6 @@
       <span class="institutional-name">Winbit &ndash; Gestión Activa en USD</span>
       <span class="institutional-copy">&copy; 2026 Winbit. Todos los derechos reservados.</span>
     </footer>
-
-    <!-- Tooltip Inversor — fuera de cualquier contenedor con transform -->
-    <div class="inversor-tooltip" id="inversor-tooltip">
-      <span class="tip-cat">Inversor:</span> <em class="tip-amount">hasta USD 25.000</em><br />
-      <span class="tip-cat">Core:</span> <em class="tip-amount">desde USD 25.000</em><br />
-      <span class="tip-cat">Gold:</span> <em class="tip-amount">desde USD 50.000</em>
-    </div>
 
     <script src="i18n.js"></script>
     <script src="main.js"></script>

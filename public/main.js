@@ -116,72 +116,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Inversor* tooltip — posicionado con fixed para escapar cualquier overflow padre
-  const inversorTrigger = document.getElementById('inversor-trigger');
-  const inversorTooltip = document.getElementById('inversor-tooltip');
-
-  function positionTooltip() {
-    if (!inversorTrigger || !inversorTooltip) return;
-    const rect = inversorTrigger.getBoundingClientRect();
-    const tipW = inversorTooltip.offsetWidth || 240;
-    const tipH = inversorTooltip.offsetHeight || 110;
-    const gap = 12;
-
-    // Default: above the trigger, centered
-    let top = rect.top - tipH - gap;
-    let left = rect.left + rect.width / 2 - tipW / 2;
-
-    // If it would go off the top, open below instead
-    if (top < 8) {
-      top = rect.bottom + gap;
-      // Flip the arrow
-      inversorTooltip.classList.add('tooltip-below');
-    } else {
-      inversorTooltip.classList.remove('tooltip-below');
-    }
-
-    // Clamp horizontally so it doesn't bleed off screen
-    const vw = window.innerWidth;
-    if (left < 8) left = 8;
-    if (left + tipW > vw - 8) left = vw - tipW - 8;
-
-    inversorTooltip.style.top = `${top}px`;
-    inversorTooltip.style.left = `${left}px`;
-  }
-
-  if (inversorTrigger) {
-    inversorTrigger.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const isActive = inversorTrigger.classList.toggle('active');
-      if (isActive) {
-        // Make visible first so offsetWidth/Height are real
-        inversorTooltip.style.display = 'block';
-        positionTooltip();
-      } else {
-        inversorTooltip.style.display = 'none';
-      }
-    });
-
-    // Reposition on scroll/resize in case the trigger moves
-    window.addEventListener(
-      'scroll',
-      () => {
-        if (inversorTrigger.classList.contains('active')) positionTooltip();
-      },
-      { passive: true },
-    );
-    window.addEventListener('resize', () => {
-      if (inversorTrigger.classList.contains('active')) positionTooltip();
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!inversorTrigger.contains(e.target)) {
-        inversorTrigger.classList.remove('active');
-        inversorTooltip.style.display = 'none';
-      }
-    });
-  }
-
   // Header scroll behavior
   const header = document.getElementById('header');
   let lastScrollY = window.scrollY;
@@ -245,21 +179,26 @@ document.addEventListener('DOMContentLoaded', () => {
   // Intersection Observer for fade-in animations
   const observerOptions = {
     root: null,
-    rootMargin: '0px 0px -50px 0px', // Trigger slightly before entering/leaving
-    threshold: 0.05, // Trigger as soon as 5% is visible
+    rootMargin: '0px 0px 160px 0px', // Dispara antes de que el bloque entre en pantalla
+    threshold: 0.1,
+  };
+
+  const pendingReveal = new Set();
+
+  const revealEl = (el) => {
+    if (!pendingReveal.delete(el)) return;
+    if (el.classList.contains('section-header')) {
+      el.classList.add('visible');
+    } else {
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    }
+    observer.unobserve(el);
   };
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        if (entry.target.classList.contains('section-header')) {
-          entry.target.classList.add('visible');
-        } else {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }
-        observer.unobserve(entry.target);
-      }
+      if (entry.isIntersecting) revealEl(entry.target);
     });
   }, observerOptions);
 
@@ -272,10 +211,31 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!el.classList.contains('section-header')) {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        el.style.transition = 'opacity 0.45s ease, transform 0.45s ease';
       }
+      pendingReveal.add(el);
       observer.observe(el);
     });
+
+  // Red de seguridad: con un scroll rápido el observer puede no llegar a ver un
+  // bloque (queda en blanco). Todo lo que ya quedó por encima del borde inferior
+  // de la pantalla se revela igual.
+  let sweepQueued = false;
+  const sweepPending = () => {
+    sweepQueued = false;
+    const limit = window.innerHeight + 160;
+    pendingReveal.forEach((el) => {
+      if (el.getBoundingClientRect().top < limit) revealEl(el);
+    });
+  };
+  const queueSweep = () => {
+    if (sweepQueued || !pendingReveal.size) return;
+    sweepQueued = true;
+    requestAnimationFrame(sweepPending);
+  };
+  window.addEventListener('scroll', queueSweep, { passive: true });
+  window.addEventListener('resize', queueSweep);
+  queueSweep();
   // ---- Count-up animation for Resultados Históricos ----
   const countUpEls = document.querySelectorAll('.result-pct[data-value]');
 
@@ -285,7 +245,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const animateCount = (el, target, duration) => {
       const numEl = el.querySelector('.result-num');
       if (!numEl) return;
-      const decimals = target % 1 !== 0 ? 1 : 0;
+      // Decimales según cómo viene escrito el dato ("28.0" → 1), para no perder el ",0"
+      const decimals = (el.dataset.value.split('.')[1] || '').length;
       let start = null;
 
       const step = (ts) => {
@@ -317,9 +278,9 @@ document.addEventListener('DOMContentLoaded', () => {
     countUpEls.forEach((el) => countObserver.observe(el));
   }
 
-  // ---- Count-up animation for the summary panel (+160% / 23%) ----
+  // ---- Count-up animation for the summary panel (acumulado / promedio / media mensual) ----
   // Separado del conteo de arriba: mismo efecto, pero con más duración y
-  // +160% siempre termina último (data-duration por elemento).
+  // el acumulado siempre termina último (data-duration por elemento).
   const summaryCountEls = document.querySelectorAll('.results-summary-value[data-target]');
 
   if (summaryCountEls.length) {
@@ -328,13 +289,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const animateSummaryCount = (el, target, duration) => {
       const prefix = el.dataset.prefix || '';
       const suffix = el.dataset.suffix || '';
+      const decimals = parseInt(el.dataset.decimals || '0', 10);
       let start = null;
 
       const step = (ts) => {
         if (!start) start = ts;
         const elapsed = ts - start;
         const progress = Math.min(elapsed / duration, 1);
-        const value = Math.round(easeOutSummary(progress) * target);
+        const value = (easeOutSummary(progress) * target).toFixed(decimals).replace('.', ',');
         el.textContent = `${prefix}${value}${suffix}`;
         if (progress < 1) requestAnimationFrame(step);
       };

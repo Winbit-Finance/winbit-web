@@ -41,12 +41,12 @@ const validateAndReject = async (email) => {
 
   let errorMessage = 'No estás autorizado para acceder a este portal.';
   if (validation.error === 'Investor not found in database') {
-    errorMessage = 'No estás registrado como inversor. Por favor contacta a winbit.cfds@gmail.com';
+    errorMessage = 'No estás registrado como inversor. Por favor contacta a contacto@winbit.com.ar';
   } else if (validation.error === 'Investor account is not active') {
     errorMessage =
-      'Tu cuenta de inversor no está activa. Por favor contacta a winbit.cfds@gmail.com';
+      'Tu cuenta de inversor no está activa. Por favor contacta a contacto@winbit.com.ar';
   } else if (validation.error) {
-    errorMessage = `Error de validación: ${validation.error}. Contacta a winbit.cfds@gmail.com`;
+    errorMessage = `Error de validación: ${validation.error}. Contacta a contacto@winbit.com.ar`;
   }
   return errorMessage;
 };

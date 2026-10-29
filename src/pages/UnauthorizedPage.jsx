@@ -52,7 +52,7 @@ export const UnauthorizedPage = () => {
             <p className="text-sm font-medium text-text-primary mb-2">
               {t('unauthorized.contactTitle')}
             </p>
-            <p className="text-sm text-text-primary">📧 winbit.cfds@gmail.com</p>
+            <p className="text-sm text-text-primary">📧 contacto@winbit.com.ar</p>
           </div>
 
           {/* Logout button */}
