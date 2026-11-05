@@ -85,6 +85,48 @@ const translations = {
     comisionFootnote:
       'La comisión se liquida trimestralmente o al realizar un retiro. Solo se cobra sobre rentabilidad nueva: si no hay ganancia en el período, no se cobra.',
 
+    // Textos de secciones (Proceso, Inversión, Transparencia, footer)
+    procTitle1: 'Generación de rendimientos',
+    procDesc1:
+      'Winbit opera contratos de futuros en mercados internacionales con el objetivo de generar rendimientos en USD sobre el capital administrado. La operatoria se basa en una estrategia previamente definida, aplicada bajo criterios técnicos y enfocada en lograr consistencia en los resultados a lo largo del tiempo.',
+    procTitle2: 'Gestión del capital',
+    procDesc2:
+      'El inversor aporta capital a su cuenta personal de Winbit y nuestro equipo lo integra a la operatoria diaria. La gestión se realiza bajo una estrategia con evidencia estadística positiva, orientada al crecimiento sostenido en un marco de control del riesgo.',
+    procTitle3: 'Disponibilidad de la inversión',
+    procDesc3:
+      'El capital administrado permanece disponible para el inversor en todo momento. La estructura permite solicitar retiros sin períodos de permanencia obligatorios, manteniendo liquidez mientras el dinero continúa siendo gestionado dentro de la estrategia operativa.',
+    procTitle4: 'Seguimiento de resultados',
+    procDesc4:
+      'Cada usuario puede visualizar la evolución de su inversión desde la plataforma, con actualizaciones periódicas basadas en los resultados de la operatoria. Esto permite un seguimiento claro y continuo del desempeño.',
+    inversionSubtitle:
+      'Estructura diseñada para permitir flexibilidad y acceso permanente al capital.',
+    invTitle2: 'Acceso y monitoreo',
+    invDesc2:
+      'Cada inversor dispone de una aplicación personal con actualización diaria del saldo al cierre del mercado de futuros norteamericano (18:00 UTC-3). El capital administrado se visualiza en USD y la información refleja el resultado consolidado de la operatoria diaria.',
+    invTitle3: 'Liquidez y retiros',
+    invDesc3:
+      'Los ingresos y retiros pueden solicitarse sin restricciones contractuales de permanencia. Las solicitudes se procesan habitualmente dentro de las 24 horas hábiles, con confirmación documental de la operación.',
+    invTitle4: 'Relación contractual',
+    invDesc4:
+      'La relación se formaliza mediante un contrato digital entre las partes, con firma electrónica y respaldo jurídico-documental de cada operación.',
+    taglineL1: 'Capital',
+    taglineL2: 'en movimiento,',
+    taglineL3: 'con criterio',
+    transTitle1: 'Registro operativo',
+    transDesc1:
+      'Cada operación queda registrada con fecha, instrumento y resultado. El inversor tiene acceso al historial consolidado de la operatoria.',
+    transTitle2: 'Reportes periódicos',
+    transDesc2:
+      'Se emiten reportes mensuales con el detalle del desempeño del período, disponibles para cada usuario dentro de la plataforma personal.',
+    transTitle3: 'Confirmaciones documentales',
+    transDesc3:
+      'Los depósitos y retiros se acreditan con comprobantes por correo electrónico y respaldo documental formal, garantizando la trazabilidad completa de cada movimiento.',
+    transTitle4: 'Acceso histórico y trazabilidad',
+    transDesc4:
+      'La aplicación actualiza el saldo diariamente al cierre del mercado (18:00 UTC-3) y permite consultar el historial completo de movimientos de la cuenta.',
+    footerName: 'Winbit – Gestión Activa en USD',
+    footerCopy: '© 2026 Winbit. Todos los derechos reservados.',
+
     // Preguntas
     preguntasTitle: 'Preguntas',
     faq1Q: '¿En qué mercados operan?',
@@ -147,7 +189,8 @@ const translations = {
 
     // Proceso
     procesoTitle: 'Process',
-    procesoSubtitle: 'Operational methodology based on discipline and risk control.',
+    procesoSubtitle:
+      'Operating methodology focused on generating consistent results, supported by risk control.',
 
     // Inversión
     inversionKicker: 'Active management in USD',
@@ -168,7 +211,7 @@ const translations = {
     transparenciaItem4Desc:
       'Individual access with daily balance updates, cumulative results, and account status in operational time.',
     transparenciaClosing:
-      'We prioritize clarity, traceability, and professional accountability in every aspect of our operation.',
+      'All operations and movements are documented, allowing clear and traceable follow-up of capital through reports, our historical record and personalized access.',
     trayectoriaTitle: 'Track record',
     trayectoriaDesc:
       'Over 6 years in international financial markets; over 4 with the current futures strategy.',
@@ -208,6 +251,47 @@ const translations = {
     cuentaNota: 'on new positive returns',
     comisionFootnote:
       'The fee is settled quarterly or upon a withdrawal. It is charged only on new returns: if there is no gain in the period, no fee is charged.',
+
+    // Textos de secciones (Proceso, Inversión, Transparencia, footer)
+    procTitle1: 'Return generation',
+    procDesc1:
+      'Winbit trades futures contracts in international markets with the goal of generating USD returns on the managed capital. Trading follows a previously defined strategy, applied under technical criteria and focused on achieving consistent results over time.',
+    procTitle2: 'Capital management',
+    procDesc2:
+      'The investor contributes capital to a personal Winbit account and our team integrates it into daily trading. Management follows a strategy with positive statistical evidence, aimed at sustained growth within a risk-control framework.',
+    procTitle3: 'Investment availability',
+    procDesc3:
+      'Managed capital remains available to the investor at all times. The structure allows withdrawal requests with no mandatory holding periods, maintaining liquidity while the money continues to be managed within the trading strategy.',
+    procTitle4: 'Results tracking',
+    procDesc4:
+      'Each user can view the evolution of their investment from the platform, with periodic updates based on trading results. This allows clear and continuous follow-up of performance.',
+    inversionSubtitle: 'A structure designed to allow flexibility and permanent access to capital.',
+    invTitle2: 'Access and monitoring',
+    invDesc2:
+      'Each investor has a personal app with daily balance updates at the close of the North American futures market (18:00 UTC-3). Managed capital is shown in USD and the information reflects the consolidated result of daily trading.',
+    invTitle3: 'Liquidity and withdrawals',
+    invDesc3:
+      'Deposits and withdrawals can be requested with no contractual holding restrictions. Requests are usually processed within 24 business hours, with documentary confirmation of the transaction.',
+    invTitle4: 'Contractual relationship',
+    invDesc4:
+      'The relationship is formalized through a digital contract between the parties, with electronic signature and legal-documentary support for every transaction.',
+    taglineL1: 'Capital',
+    taglineL2: 'in motion,',
+    taglineL3: 'with criteria',
+    transTitle1: 'Operating record',
+    transDesc1:
+      'Every trade is recorded with date, instrument and result. The investor has access to the consolidated trading history.',
+    transTitle2: 'Periodic reports',
+    transDesc2:
+      'Monthly reports with period performance details are issued, available to each user within their personal platform.',
+    transTitle3: 'Documentary confirmations',
+    transDesc3:
+      'Deposits and withdrawals are credited with email receipts and formal documentary support, ensuring full traceability of every movement.',
+    transTitle4: 'Historical access and traceability',
+    transDesc4:
+      'The app updates the balance daily at market close (18:00 UTC-3) and lets you review the complete account movement history.',
+    footerName: 'Winbit – Active Management in USD',
+    footerCopy: '© 2026 Winbit. All rights reserved.',
 
     // Preguntas
     preguntasTitle: 'FAQ',
